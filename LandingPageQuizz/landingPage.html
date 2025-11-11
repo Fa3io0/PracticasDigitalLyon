@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Starfield Background -->
+    <div class="starfield" id="starfield"></div>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="glow-cyan" style="top: 10%; left: 20%;"></div>
+            <div class="glow-magenta" style="bottom: 20%; right: 20%;"></div>
+            
+            <h1 class="neon-cyan">
+                CONVIERTE TU IDEA EN UN PRODUCTO REAL
+            </h1>
+            <p class="subtitle neon-magenta">
+                RÁPIDO Y SIN HUMO 💥
+            </p>
+            <p>
+                Haz el quiz (3-6 min). Descubre tu nivel real y recibe un plan personalizado.
+            </p>
+            
+            <a href="#quiz" class="btn">
+                HACER EL QUIZ — ES GRATIS 🎮
+            </a>
+        </section>
+
+        <!-- Benefits Section -->
+        <section>
+            <h2 class="section-title neon-yellow">
+                ¿QUÉ OBTENDRÁS?
+            </h2>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3 class="neon-cyan">DIAGNÓSTICO REAL</h3>
+                    <p>
+                        Evaluación honesta de dónde estás y qué tan viable es tu proyecto ahora mismo.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h3 class="neon-magenta">RECOMENDACIONES PERSONALIZADAS</h3>
+                    <p>
+                        Plan de acción específico con los pasos exactos para avanzar al siguiente nivel.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3 class="neon-yellow">VEREDICTO HONESTO</h3>
+                    <p>
+                        Sabrás si podemos ayudarte ahora o qué necesitas mejorar primero.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works -->
+        <section class="dark-section">
+            <div class="container">
+                <h2 class="section-title neon-cyan">
+                    CÓMO FUNCIONA 🎯
+                </h2>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number neon-magenta">01</div>
+                        <div class="step-content">
+                            <h3 class="neon-cyan">Responde 30 preguntas</h3>
+                            <p>Divididas en 6 bloques sobre estrategia, producto, ventas y más.</p>
+                        </div>
+                        <div class="step-check neon-green">✓</div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number neon-magenta">02</div>
+                        <div class="step-content">
+                            <h3 class="neon-cyan">Descubre tu nivel</h3>
+                            <p>De 'Idea Confusa' a 'Startup Creciendo' con badge incluido.</p>
+                        </div>
+                        <div class="step-check neon-green">✓</div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number neon-magenta">03</div>
+                        <div class="step-content">
+                            <h3 class="neon-cyan">Recibe tu plan</h3>
+                            <p>Recomendaciones accionables basadas en tus respuestas.</p>
+                        </div>
+                        <div class="step-check neon-green">✓</div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number neon-magenta">04</div>
+                        <div class="step-content">
+                            <h3 class="neon-cyan">Acelera tu startup</h3>
+                            <p>Accede a mentoría personalizada o recursos gratuitos según tu nivel.</p>
+                        </div>
+                        <div class="step-check neon-green">✓</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <section>
+            <h2 class="section-title neon-yellow">
+                MÁS DE 500 FOUNDERS YA LO HICIERON
+            </h2>
+            
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-value neon-cyan">92%</div>
+                    <p class="stat-label">Completaron el quiz</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-value neon-magenta">4.8/5</div>
+                    <p class="stat-label">Valoración promedio</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-value neon-yellow">78%</div>
+                    <p class="stat-label">Implementaron cambios</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="hero" style="padding: 80px 20px;">
+            <h2 class="section-title neon-cyan">
+                ¿LISTO PARA SUBIR DE NIVEL? 🚀
+            </h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px;">
+                3-6 minutos que pueden cambiar el rumbo de tu startup
+            </p>
+            <a href="#quiz" class="btn" style="background: #ff00ff; border-color: #ff00ff; box-shadow: 0 0 20px #ff00ff;">
+                EMPEZAR AHORA 🎮
+            </a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2025 — Hecho por Fabio Canaza
+        </p>
+    </footer>
+
+    <script>
+        // Generate starfield
+        const starfield = document.getElementById('starfield');
+        const starCount = 200;
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starfield.appendChild(star);
+        }
+    </script>
+</body>
+</html>

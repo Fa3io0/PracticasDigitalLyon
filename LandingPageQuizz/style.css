@@ -1,0 +1,644 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Pixel Grid Overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image:  */
+        /* repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 255, 0.03) 2px, rgba(0, 255, 255, 0.03) 4px), */
+        /* repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 255, 255, 0.03) 2px, rgba(0, 255, 255, 0.03) 4px); */
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* CRT Screen Effect */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 9998;
+    animation: flicker 0.15s infinite;
+}
+
+/* @keyframes flicker {
+    0% { opacity: 0.97; }
+    50% { opacity: 1; }
+    100% { opacity: 0.97; }
+} */
+
+/* Starfield Background - More Digital */
+.starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: linear-gradient(180deg, #0d0221 0%, #1a0b3d 50%, #0d0221 100%);
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #ffffff;
+    box-shadow: 0 0 4px #ffffff, 0 0 8px #ffffff;
+    animation: pixelTwinkle 2s infinite;
+}
+
+.star:nth-child(3n) {
+    background: #ffffff;
+    box-shadow: 0 0 4px #ffffff, 0 0 8px #ffffff;
+}
+
+.star:nth-child(5n) {
+    background: #ffffff;
+    box-shadow: 0 0 4px #ffffff, 0 0 8px #ffffff;
+    width: 4px;
+    height: 4px;
+}
+
+@keyframes pixelTwinkle {
+    0%, 100% { opacity: 0.1; transform: scale(1); }
+    25% { opacity: 1; transform: scale(0.5); }
+}
+
+/* Pixel Art Text Effects */
+.neon-cyan {
+    color: #ffffff;
+    /* text-shadow: 
+        2px 2px 0px #ee0606,
+        4px 4px 0px #ee0606
+        0 0 20px #ee0606,
+        0 0 40px #ee0606; */
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 2px;
+}
+
+.neon-magenta {
+    color: #ffffff;
+    /* text-shadow: 
+        2px 2px 0px #ffffff,
+        0 0 40px #ffffff; */
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 2px;
+}
+
+.neon-yellow {
+    color: #ffffff;
+    /* text-shadow: 
+        2px 2px 0px #ffffff,
+        0 0 20px #ffffff,
+        0 0 40px #ffffff; */
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 2px;
+}
+
+.neon-green {
+    color: #00ff00;
+    /* text-shadow: 
+        2px 2px 0px #008800,
+        0 0 10px #00ff00,
+        0 0 20px #00ff00; */
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Digital Glow Effects */
+
+
+/* @keyframes digitalPulse {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.15; }
+    33% { transform: scale(1.3) rotate(120deg); opacity: 0.25; }
+    66% { transform: scale(0.9) rotate(240deg); opacity: 0.1; }
+} */
+
+
+
+/* Container */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    /* border: 2px solid transparent; */
+    /* box-shadow: inset 0 0 30px #2b03b8, 0 0 40px rgba #1c4eda; */
+    /* background-color: #ffffff 1000px solid transparent; */
+    /* background: linear-gradient(#0d0221, #0d0221) padding-box, */
+                /* linear-gradient(135deg, #00ffff, #ff00ff, #ffff00) border-box; */
+    margin: 20px;
+    /* box-shadow:  */
+        /* inset 0 0 30px rgb(6, 5, 80), */
+        /* 0 0 40px rgb(6, 5, 80); */
+}
+
+.hero h1 {
+    font-size: clamp(1.2rem, 6vw, 5rem);
+    margin-bottom: 30px;
+    /* animation: glowPulseIntense 4s infinite; */
+    line-height: 1.6;
+}
+
+/* @keyframes glowPulseIntense {
+    0%, 100% { 
+        text-shadow: 
+            2px 2px 0px #5c24b8,
+            4px 4px 0px #5c24b8,
+            0 0 20px #5c24b8,
+            0 0 40px #5c24b8;
+    }
+    15% { 
+        text-shadow: 
+            2px 2px 0px #5c24b8,
+            4px 4px 0px #5c24b8,
+            0 0 30px #5c24b8,
+            0 0 60px #5c24b8,
+            0 0 80px #5c24b8;
+    }
+} */
+
+.hero .subtitle {
+    font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #aaa8a8;
+    font-size: 3rem;
+}
+
+.hero p {
+    font-family: 'Space Mono', monospace; /* Posible cambio de letra */
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    color: #aaa8a8;
+}
+
+/* Terminal-Style Buttons with Pixel Art */
+.btn {
+    display: inline-block;
+    padding: 20px 40px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #ffffff;
+    /* background: #00ffff; */
+    border: 2px solid #fff;
+    /* box-shadow: 
+        0 0 0 2px #000,
+        0 0 30px #5c24b8,
+        inset 0 0 20px rgba(255, 255, 255, 0.068),
+        8px 8px 0 #5c24b8; */
+    cursor: pointer;
+    transition: all 0.1s;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.btn::before {
+    content: '▶';
+    /* position: absolute; */
+    left: 15px;
+    /* animation: arrowBounce 1s infinite; */
+}
+
+.btn::after {
+    content: '◀';
+    /* position: absolute; */
+    right: 15px;
+    /* animation: arrowBounce 1s infinite reverse; */
+}
+
+/* @keyframes arrowBounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+} */
+
+.btn:hover {
+    background: #5c24b8;
+    border-color: #5c24b8;
+    /* box-shadow: 
+        0 0 0 2px #000,
+        0 0 40px #ff00ff,
+        inset 0 0 30px rgba(255, 255, 255, 0.3),
+        8px 8px 0 #aa0088; */
+    transform: translate(-2px, -2px);
+}
+
+.btn:active {
+    transform: translate(4px, 4px);
+    /* box-shadow: 
+        0 0 0 2px #000,
+        0 0 20px #ff00ff,
+        inset 0 0 20px rgba(0, 0, 0, 0.2),
+        2px 2px 0 #aa0088; */
+}
+
+/* Terminal Window Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.card {
+    background: linear-gradient(135deg, #1a0b3d 0%, #0d0221 100%);
+    border: 6px solid #5c24b8;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    /* box-shadow: 
+        0 0 0 2px #000,
+        0 0 30px #5c24b8,
+        inset 0 0 50px rgba(0, 255, 255, 0.05),
+        12px 12px 0 rgba(0, 0, 0, 0.5); */
+    transition: all 0.2s;
+}
+
+/* Terminal Header Bar */
+.card::before {
+    content: '█ SYSTEM.EXE';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: #5c24b8;
+    color: #000;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    /* box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); */
+}
+
+.card::after {
+    content: '■ ■ ■';
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    color: #000;
+    font-size: 0.8rem;
+    line-height: 30px;
+}
+
+.card:hover {
+    border-color: #ff00ff;
+    /* box-shadow: 
+        0 0 0 2px #000,
+        0 0 40px rgba(255, 0, 255, 0.6),
+        inset 0 0 50px rgba(255, 0, 255, 0.1),
+        12px 12px 0 rgba(0, 0, 0, 0.5); */
+    transform: translate(-4px, -4px);
+}
+
+.card:hover::before {
+    background: #ff00ff;
+    /* box-shadow: 0 0 30px rgba(255, 0, 255, 0.7); */
+}
+
+.card:nth-child(2) {
+    border-color: #ff00ff;
+    margin-top: 30px;
+}
+
+.card:nth-child(2)::before {
+    background: #ff00ff;
+}
+
+.card:nth-child(2):hover {
+    border-color: #5c1558;
+}
+
+.card:nth-child(2):hover::before {
+    background: #5c1558;
+}
+
+.card:nth-child(3) {
+    border-color: #5c1558;
+    margin-top: 30px;
+}
+
+.card:nth-child(3)::before {
+    background: #5c1558;
+}
+
+.card:nth-child(3):hover {
+    border-color: #5c24b8;
+}
+
+.card:nth-child(3):hover::before {
+    background: #5c24b8;
+}
+
+.card-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+.card h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.card p {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #c0c0c0;
+}
+
+/* Section Titles with Pixel Border */
+.section-title {
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 2.2rem);
+    margin: 60px 0 40px;
+    padding: 20px;
+    border: 4px solid;
+    display: inline-block;
+    width: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 1.6;
+}
+
+.section-title::before,
+.section-title::after {
+    content: '█';
+    /* position: absolute; */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+}
+
+.section-title::before {
+    left: -30px;
+}
+
+.section-title::after {
+    right: -30px;
+}
+
+/* Steps - Game Level Style */
+.steps {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.step {
+    background: linear-gradient(135deg, #1a0b3d 0%, #0d0221 100%);
+    border: 6px solid #5c24b8;
+    padding: 25px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+    /* box-shadow: 
+        0 0 0 2px #000,
+        0 0 30px rgba(0, 255, 255, 0.3),
+        inset 0 0 50px rgba(0, 255, 255, 0.05),
+        10px 10px 0 rgba(0, 0, 0, 0.5); */
+    transition: all 0.2s;
+}
+
+.step::before {
+    content: 'LEVEL';
+    position: absolute;
+    top: -18px;
+    left: 20px;
+    background: #5c24b8;
+    color: #000;
+    padding: 2px 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.5rem;
+    /* box-shadow: 0 0 15px rgba(0, 255, 255, 0.8); */
+}
+
+.step:hover {
+    /* border-color: #ff00ff;
+    box-shadow: 
+        0 0 0 2px #000,
+        0 0 40px rgba(255, 0, 255, 0.5),
+        inset 0 0 50px rgba(255, 0, 255, 0.08),
+        10px 10px 0 rgba(0, 0, 0, 0.5); */
+    transform: translate(-3px, -3px);
+}
+
+/* .step:hover::before { 
+    background: #ff00ff;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+} */
+
+.step-number {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    min-width: 100px;
+    text-align: center;
+}
+
+.step-content h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.step-content p {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.95rem;
+    color: #c0c0c0;
+    line-height: 1.8;
+}
+
+.step-check {
+    margin-left: auto;
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+/* Stats - Arcade Score Display */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stat {
+    background: linear-gradient(135deg, #1a0b3d 0%, #0d0221 100%);
+    border: 6px solid #5c24b8;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    /* transition: all 0.2s; */
+    /* box-shadow: 
+        0 0 0 2px #000,
+        0 0 30px rgba(0, 255, 255, 0.4),
+        inset 0 0 40px rgba(0, 255, 255, 0.05),
+        10px 10px 0 rgba(0, 0, 0, 0.6); */
+}
+
+.stat::before {
+    content: 'SCORE';
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #5c24b8;
+    color: #000;
+    padding: 2px 15px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.5rem;
+    /* transition: all 0.2s; */
+    /* box-shadow: 0 0 15px rgba(0, 255, 255, 0.8); */
+}
+
+.stat:hover {
+    transform: translate(-2px, -2px);
+}
+
+.stat:nth-child(2) {
+    border-color: #ff00ff;
+}
+
+.stat:nth-child(2)::before {
+    background: #ff00ff;
+    /* box-shadow: 0 0 15px rgba(255, 0, 255, 0.8); */
+}
+
+.stat:nth-child(3) {
+    border-color: #5c1558;
+}
+
+.stat:nth-child(3)::before {
+    background: #5c1558;
+    /* box-shadow: 0 0 15px rgba(255, 255, 0, 0.8); */
+}
+
+.stat-value {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.9rem;
+    color: #c0c0c0;
+    text-transform: uppercase;
+}
+
+/* Dark Section - Deep Space */
+.dark-section {
+    background: linear-gradient(180deg, #0d0221 0%, #1a0b3d 50%, #0d0221 100%);
+    padding: 60px 20px;
+    margin: 60px 0;
+    border-top: 4px solid #5c24b8;
+    border-bottom: 4px solid #5c24b8;
+    /* box-shadow: 
+        inset 0 10px 50px rgba(0, 255, 255, 0.1),
+        inset 0 -10px 50px rgba(255, 0, 255, 0.1); */
+}
+
+/* Footer - Terminal Style */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 6px solid #5c24b8;
+    margin-top: 60px;
+    background: #000;
+    /* box-shadow: inset 0 10px 30px rgba(0, 255, 255, 0.2); */
+    position: relative;
+}
+
+footer::before {
+    content: '█ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    right: 0;
+    color: #5c24b8;
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    /* text-shadow: 0 0 10px #5c24b8; */
+}
+
+footer p {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: #808080;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-check {
+        margin-left: 0;
+    }
+    
+    .btn {
+        padding: 15px 30px;
+        font-size: 0.65rem;
+    }
+    
+    .btn::before,
+    .btn::after {
+        display: none;
+    }
+    
+    .card {
+        margin-top: 40px !important;
+    }
+    
+    .step-number {
+        font-size: 2rem;
+    }
+}
