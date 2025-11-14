@@ -19,9 +19,6 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-image:  */
-        /* repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 255, 0.03) 2px, rgba(0, 255, 255, 0.03) 4px), */
-        /* repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 255, 255, 0.03) 2px, rgba(0, 255, 255, 0.03) 4px); */
     pointer-events: none;
     z-index: 9999;
 }
@@ -30,7 +27,7 @@ body::before {
 body::after {
     content: '';
     position: fixed;
-    top: 0;
+    top: 0px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -45,12 +42,6 @@ body::after {
     z-index: 9998;
     animation: flicker 0.15s infinite;
 }
-
-/* @keyframes flicker {
-    0% { opacity: 0.97; }
-    50% { opacity: 1; }
-    100% { opacity: 0.97; }
-} */
 
 /* Starfield Background - More Digital */
 .starfield {
@@ -92,53 +83,26 @@ body::after {
 /* Pixel Art Text Effects */
 .neon-cyan {
     color: #ffffff;
-    /* text-shadow: 
-        2px 2px 0px #ee0606,
-        4px 4px 0px #ee0606
-        0 0 20px #ee0606,
-        0 0 40px #ee0606; */
     font-family: 'Press Start 2P', cursive;
     letter-spacing: 2px;
 }
 
 .neon-magenta {
     color: #ffffff;
-    /* text-shadow: 
-        2px 2px 0px #ffffff,
-        0 0 40px #ffffff; */
     font-family: 'Press Start 2P', cursive;
     letter-spacing: 2px;
 }
 
 .neon-yellow {
     color: #ffffff;
-    /* text-shadow: 
-        2px 2px 0px #ffffff,
-        0 0 20px #ffffff,
-        0 0 40px #ffffff; */
     font-family: 'Press Start 2P', cursive;
     letter-spacing: 2px;
 }
 
 .neon-green {
     color: #00ff00;
-    /* text-shadow: 
-        2px 2px 0px #008800,
-        0 0 10px #00ff00,
-        0 0 20px #00ff00; */
     font-family: 'Press Start 2P', cursive;
 }
-
-/* Digital Glow Effects */
-
-
-/* @keyframes digitalPulse {
-    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.15; }
-    33% { transform: scale(1.3) rotate(120deg); opacity: 0.25; }
-    66% { transform: scale(0.9) rotate(240deg); opacity: 0.1; }
-} */
-
-
 
 /* Container */
 .container {
@@ -151,60 +115,126 @@ body::after {
 
 /* Hero Section */
 .hero {
-    text-align: center;
-    padding: 80px 20px;
+    padding: 160px 0;
     position: relative;
-    /* border: 2px solid transparent; */
-    /* box-shadow: inset 0 0 30px #2b03b8, 0 0 40px rgba #1c4eda; */
-    /* background-color: #ffffff 1000px solid transparent; */
-    /* background: linear-gradient(#0d0221, #0d0221) padding-box, */
-                /* linear-gradient(135deg, #00ffff, #ff00ff, #ffff00) border-box; */
     margin: 20px;
-    /* box-shadow:  */
-        /* inset 0 0 30px rgb(6, 5, 80), */
-        /* 0 0 40px rgb(6, 5, 80); */
+}
+
+/* NUEVO: Estructura de dos columnas para el Hero */
+.hero-grid {
+    display: flex; 
+    gap: 40px; 
+    align-items: flex-start; 
+    padding-top: 10px;
+}
+
+/* Columna Izquierda: Título y CTA */
+.hero-content {
+    flex: 3; 
+    max-width: 60%; 
+    text-align: left;
+}
+
+/* Columna Derecha: Preguntas y Respuestas (FAQ) */
+.hero-qna .hero-img{
+    flex: 2;
+    border: 4px solid #5c24b8; 
+    background: rgba(13, 2, 33, 0.7); 
+    position: relative;
+    width: 500px; 
+    height: 425px;
+}
+
+.hero-qna h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    margin-bottom: 25px;
+    padding: 5px;
+    border-bottom: 2px solid #ff00ff;
+    line-height: 1.5;
+}
+
+.qna-item {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #5c24b8;
+}
+
+.qna-q {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+    line-height: 1.5;
+    color: #b18deb; 
+}
+
+.qna-a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    color: #fff; 
+    line-height: 1.6;
+    padding-left: 10px; 
 }
 
 .hero h1 {
-    font-size: clamp(1.2rem, 6vw, 5rem);
+    font-size: clamp(2rem, 3vw, 2.3rem);
     margin-bottom: 30px;
-    /* animation: glowPulseIntense 4s infinite; */
     line-height: 1.6;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-/* @keyframes glowPulseIntense {
-    0%, 100% { 
-        text-shadow: 
-            2px 2px 0px #5c24b8,
-            4px 4px 0px #5c24b8,
-            0 0 20px #5c24b8,
-            0 0 40px #5c24b8;
-    }
-    15% { 
-        text-shadow: 
-            2px 2px 0px #5c24b8,
-            4px 4px 0px #5c24b8,
-            0 0 30px #5c24b8,
-            0 0 60px #5c24b8,
-            0 0 80px #5c24b8;
-    }
-} */
+.hero h1 .part1 {
+    color: #b18deb;
+}
+
+.hero h1 .part2 {
+    color: #fff;
+}
+
+h2 .part1 {
+    color: #b18deb;
+}
+
+h1 .part2 {
+    color: #fff;
+}
 
 .hero .subtitle {
-    font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+    font-size: clamp(0.7rem, 2vw, 1rem);
     margin-bottom: 20px;
     line-height: 1.8;
-    color: #aaa8a8;
-    font-size: 3rem;
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: left;
 }
 
 .hero p {
-    font-family: 'Space Mono', monospace; /* Posible cambio de letra */
+    font-family: 'Space Mono', monospace; 
     font-size: 1rem;
     max-width: 700px;
-    margin: 0 auto 40px;
+    margin: 0 0 40px 0;
     line-height: 1.8;
-    color: #aaa8a8;
+    color: #ffffff;
+    text-align: left;
+}
+
+.hero-footer {
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #ffffff;
+    text-align: center;
+}
+
+.hero-footer p {
+    font-family: 'Space Mono', monospace; 
+    font-size: 0.9rem;
+    max-width: 700px;
+    margin: 0 0 40px 0;
+    line-height: 1.8;
+    color: #ffffff;
+    text-align: center;
 }
 
 /* Terminal-Style Buttons with Pixel Art */
@@ -212,59 +242,54 @@ body::after {
     display: inline-block;
     padding: 20px 40px;
     font-family: 'Press Start 2P', cursive;
-    font-size: 2rem;
+    font-size: 0.7rem;
     text-decoration: none;
     color: #ffffff;
-    /* background: #00ffff; */
-    border: 2px solid #fff;
-    /* box-shadow: 
-        0 0 0 2px #000,
-        0 0 30px #5c24b8,
-        inset 0 0 20px rgba(255, 255, 255, 0.068),
-        8px 8px 0 #5c24b8; */
+    background: #5c24b8;
+    border: 1px solid #000000;
     cursor: pointer;
     transition: all 0.1s;
     position: relative;
     text-transform: uppercase;
 }
 
+.btn-footer  {
+    display: inline-block;
+    padding: 20px 40px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #ffffff;
+    background: #5c24b8;
+    border: 1px solid #000000;
+    cursor: pointer;
+    transition: all 0.1s;
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 .btn::before {
     content: '▶';
-    /* position: absolute; */
     left: 15px;
-    /* animation: arrowBounce 1s infinite; */
 }
 
 .btn::after {
     content: '◀';
-    /* position: absolute; */
     right: 15px;
-    /* animation: arrowBounce 1s infinite reverse; */
 }
 
-/* @keyframes arrowBounce {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(5px); }
-} */
-
 .btn:hover {
-    background: #5c24b8;
-    border-color: #5c24b8;
-    /* box-shadow: 
+    box-shadow: 
         0 0 0 2px #000,
-        0 0 40px #ff00ff,
-        inset 0 0 30px rgba(255, 255, 255, 0.3),
-        8px 8px 0 #aa0088; */
+        0 0 40px #000,
+        inset 0 0 30px #000,
+        8px 8px 0 #000;
     transform: translate(-2px, -2px);
 }
 
 .btn:active {
     transform: translate(4px, 4px);
-    /* box-shadow: 
-        0 0 0 2px #000,
-        0 0 20px #ff00ff,
-        inset 0 0 20px rgba(0, 0, 0, 0.2),
-        2px 2px 0 #aa0088; */
 }
 
 /* Terminal Window Cards */
@@ -281,11 +306,6 @@ body::after {
     padding: 30px;
     text-align: center;
     position: relative;
-    /* box-shadow: 
-        0 0 0 2px #000,
-        0 0 30px #5c24b8,
-        inset 0 0 50px rgba(0, 255, 255, 0.05),
-        12px 12px 0 rgba(0, 0, 0, 0.5); */
     transition: all 0.2s;
 }
 
@@ -304,7 +324,6 @@ body::after {
     display: flex;
     align-items: center;
     padding: 0 10px;
-    /* box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); */
 }
 
 .card::after {
@@ -319,17 +338,11 @@ body::after {
 
 .card:hover {
     border-color: #ff00ff;
-    /* box-shadow: 
-        0 0 0 2px #000,
-        0 0 40px rgba(255, 0, 255, 0.6),
-        inset 0 0 50px rgba(255, 0, 255, 0.1),
-        12px 12px 0 rgba(0, 0, 0, 0.5); */
     transform: translate(-4px, -4px);
 }
 
 .card:hover::before {
     background: #ff00ff;
-    /* box-shadow: 0 0 30px rgba(255, 0, 255, 0.7); */
 }
 
 .card:nth-child(2) {
@@ -383,17 +396,15 @@ body::after {
     font-family: 'Space Mono', monospace;
     font-size: 0.95rem;
     line-height: 1.8;
-    color: #c0c0c0;
+    color: #fff;
 }
 
 /* Section Titles with Pixel Border */
 .section-title {
     text-align: center;
-    font-size: clamp(1rem, 2vw, 2.2rem);
+    font-size: clamp(1rem, 1.3vw, 2rem);
     margin: 60px 0 40px;
     padding: 20px;
-    border: 4px solid;
-    display: inline-block;
     width: auto;
     position: relative;
     left: 50%;
@@ -404,7 +415,6 @@ body::after {
 .section-title::before,
 .section-title::after {
     content: '█';
-    /* position: absolute; */
     top: 50%;
     transform: translateY(-50%);
     font-size: 1rem;
@@ -433,11 +443,6 @@ body::after {
     align-items: center;
     gap: 25px;
     position: relative;
-    /* box-shadow: 
-        0 0 0 2px #000,
-        0 0 30px rgba(0, 255, 255, 0.3),
-        inset 0 0 50px rgba(0, 255, 255, 0.05),
-        10px 10px 0 rgba(0, 0, 0, 0.5); */
     transition: all 0.2s;
 }
 
@@ -451,23 +456,11 @@ body::after {
     padding: 2px 10px;
     font-family: 'Press Start 2P', cursive;
     font-size: 0.5rem;
-    /* box-shadow: 0 0 15px rgba(0, 255, 255, 0.8); */
 }
 
 .step:hover {
-    /* border-color: #ff00ff;
-    box-shadow: 
-        0 0 0 2px #000,
-        0 0 40px rgba(255, 0, 255, 0.5),
-        inset 0 0 50px rgba(255, 0, 255, 0.08),
-        10px 10px 0 rgba(0, 0, 0, 0.5); */
     transform: translate(-3px, -3px);
 }
-
-/* .step:hover::before { 
-    background: #ff00ff;
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
-} */
 
 .step-number {
     font-family: 'Press Start 2P', cursive;
@@ -486,7 +479,7 @@ body::after {
 .step-content p {
     font-family: 'Space Mono', monospace;
     font-size: 0.95rem;
-    color: #c0c0c0;
+    color: #fff;
     line-height: 1.8;
 }
 
@@ -513,12 +506,6 @@ body::after {
     padding: 30px;
     text-align: center;
     position: relative;
-    /* transition: all 0.2s; */
-    /* box-shadow: 
-        0 0 0 2px #000,
-        0 0 30px rgba(0, 255, 255, 0.4),
-        inset 0 0 40px rgba(0, 255, 255, 0.05),
-        10px 10px 0 rgba(0, 0, 0, 0.6); */
 }
 
 .stat::before {
@@ -532,8 +519,6 @@ body::after {
     padding: 2px 15px;
     font-family: 'Press Start 2P', cursive;
     font-size: 0.5rem;
-    /* transition: all 0.2s; */
-    /* box-shadow: 0 0 15px rgba(0, 255, 255, 0.8); */
 }
 
 .stat:hover {
@@ -546,7 +531,6 @@ body::after {
 
 .stat:nth-child(2)::before {
     background: #ff00ff;
-    /* box-shadow: 0 0 15px rgba(255, 0, 255, 0.8); */
 }
 
 .stat:nth-child(3) {
@@ -555,7 +539,6 @@ body::after {
 
 .stat:nth-child(3)::before {
     background: #5c1558;
-    /* box-shadow: 0 0 15px rgba(255, 255, 0, 0.8); */
 }
 
 .stat-value {
@@ -568,7 +551,7 @@ body::after {
 .stat-label {
     font-family: 'Space Mono', monospace;
     font-size: 0.9rem;
-    color: #c0c0c0;
+    color: #fff;
     text-transform: uppercase;
 }
 
@@ -579,9 +562,6 @@ body::after {
     margin: 60px 0;
     border-top: 4px solid #5c24b8;
     border-bottom: 4px solid #5c24b8;
-    /* box-shadow: 
-        inset 0 10px 50px rgba(0, 255, 255, 0.1),
-        inset 0 -10px 50px rgba(255, 0, 255, 0.1); */
 }
 
 /* Footer - Terminal Style */
@@ -591,7 +571,6 @@ footer {
     border-top: 6px solid #5c24b8;
     margin-top: 60px;
     background: #000;
-    /* box-shadow: inset 0 10px 30px rgba(0, 255, 255, 0.2); */
     position: relative;
 }
 
@@ -604,7 +583,6 @@ footer::before {
     color: #5c24b8;
     font-size: 0.8rem;
     letter-spacing: 5px;
-    /* text-shadow: 0 0 10px #5c24b8; */
 }
 
 footer p {
