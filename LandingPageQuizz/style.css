@@ -115,7 +115,7 @@ body::after {
 
 /* Hero Section */
 .hero {
-    padding: 160px 0;
+    padding: 100px 0;
     position: relative;
     margin: 20px;
 }
@@ -562,6 +562,16 @@ h1 .part2 {
     margin: 60px 0;
     border-top: 4px solid #5c24b8;
     border-bottom: 4px solid #5c24b8;
+    font-size: 1rem;
+}
+
+.qna-a {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.qna-q {
+    font-size: 1rem;
 }
 
 /* Footer - Terminal Style */
