@@ -6,6 +6,7 @@
     border: 6px solid #ff00ff; /* Borde magenta para destacar */
     box-shadow: 0 0 15px #ff00ff;
     min-height: 500px;
+    border-radius: 8px;
 }
 
     /* Barra de Progreso - Estilo Arcade */
@@ -44,6 +45,111 @@
     margin-bottom: 30px;
 }
 
+.small-text {
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 2px;
+    padding: 0px 0px 30px;
+    font-size: 0.7rem;
+}
+
+
+/* Estilo para el placeholder */
+
+.text-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 15px 0 40px 0; 
+    box-sizing: border-box;
+    font-size: 0.9em;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    
+    /* Colores y Neón */
+    color: rgba(170, 170, 170, 0.7); 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border: none;
+    border-bottom: 2px solid var(--neon-cyan); 
+    
+    /* Efecto Neón y Sombra Interior */
+    box-shadow: inset 0 0 5px #b18deb; 
+    transition: all 0.3s ease;
+}
+
+.text-input:focus {
+    outline: none; 
+    background-color: rgba(10, 20, 30, 0.8);
+    
+    border-bottom: 2px solid var(--neon-magenta); 
+    box-shadow: 
+        inset 0 0 8px rgba(255, 0, 255, 0.6),
+        0 4px 15px rgba(255, 0, 255, 0.2); 
+}
+
+.text-input::placeholder {
+    color: rgba(170, 170, 170, 0.7);
+    font-weight: normal;
+}
+
+/* ESTILO PARA EL BLOQUE DE INFORMACIÓN (info-block) */
+
+.info-block {
+    background: linear-gradient(135deg, #1a0b3d 0%, #0d0221 100%);
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 8px; 
+    
+    /* Efecto de Borde/Sombra Neón (simula una ventana o tarjeta de datos) */
+    border: 1px solid rgba(255, 0, 255, 0.6); 
+    box-shadow: 
+        0 0 15px rgba(255, 0, 255, 0.6), 
+        inset 0 0 5px rgba(255, 0, 255, 0.6); 
+}
+
+.info-block h2 {
+    margin-top: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 0, 255, 0.5); 
+    padding: 10px 0 10px 50px;
+}
+
+.info-block p {
+    color: #e0e0e0; 
+    line-height: 1.5;
+    margin-bottom: 15px;
+    padding: 20px 20px 0 0;
+}
+
+/* Estilo para la lista de beneficios (ul) */
+.info-block ul {
+    list-style: none; /* Quitamos los puntos de lista predeterminados */
+    padding-left: 0;
+    margin: 15px 0 0 0;
+}
+
+/* Estilo para cada elemento de la lista (li) */
+.info-block ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    color: #c4faff; /* Un cian más claro para los puntos */
+    font-size: 1em;
+}
+
+/* Ícono/Bullet de lista personalizado (Punto Neón) */
+.info-block ul li::before {
+    content: '→'; 
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    /* Efecto Neón para el ícono */
+    color: var(--neon-magenta);
+    font-weight: bold;
+    text-shadow: 0 0 8px var(--neon-magenta);
+    font-size: 1.2em;
+} 
+
 /* Opciones de Respuesta (Opción Múltiple/Escala) */
 .answer-option {
     background: #1a0b3d;
@@ -51,7 +157,7 @@
     padding: 15px;
     margin-bottom: 15px;
     cursor: pointer;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Press Start 2P', cursive;
     color: #fff;
     transition: all 0.1s;
 }
@@ -109,6 +215,212 @@
     animation: fadeIn 0.5s;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================================== */
+/* ESTILO PARA EL FORMULARIO DE RESULTADOS */
+/* ==================================== */
+
+.form-title {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.form-subtitle {
+    font-size: 1.2rem;
+    color: var(--neon-cyan);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-info {
+    font-size: 0.8rem;
+    padding: 0 40px 30px;
+    text-align: center;
+    color: #b18deb;
+}
+
+.data-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+}
+
+.data-form label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    /* Aseguramos que los labels se alineen a la izquierda */
+    text-align: left; 
+}
+
+/* Reutilizamos y ajustamos el estilo del input para el formulario */
+.data-form .text-input {
+    margin: 0 0 15px 0; /* Menos margen inferior para el formulario */
+    text-align: left !important; /* Forzamos alineación izquierda del texto */
+}
+
+/* Estilo para el botón final */
+.final-btn {
+    margin-top: 20px;
+    background: var(--neon-magenta) !important;
+    border-color: var(--neon-magenta) !important;
+    box-shadow: 0 0 15px var(--neon-magenta) !important;
+}
+
+.privacy-note {
+    text-align: center;
+    font-size: 0.6rem;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* ==================================== */
+/* ESTILO PARA LA PÁGINA DE RESULTADOS */
+/* ==================================== */
+
+/* Contenedor Principal */
+#results-content {
+    padding: 30px 20px;
+    background-color: #0c0022; /* Fondo oscuro del quiz */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+}
+
+.results-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    /* Usa el color neon-magenta (asumo que está definido como variable) */
+}
+
+/* Bloque de Puntaje y Nivel */
+.score-display-block {
+    text-align: center;
+    margin-bottom: 40px;
+    border: 2px solid var(--neon-cyan, #00ffff); 
+    padding: 30px;
+    background: #0d041f; 
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.score-label {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: var(--neon-cyan, #00ffff);
+    font-weight: bold;
+}
+
+.score-value {
+    font-size: 4rem;
+    color: var(--neon-magenta, #ff00ff);
+    /* Fuente que da un toque de videojuego/retro, si la tienes cargada */
+    font-family: 'Press Start 2P', cursive; 
+    text-shadow: 0 0 20px var(--neon-magenta, #ff00ff), 0 0 5px #fff;
+    line-height: 1;
+}
+
+.level-text {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px #fff;
+    font-weight: 700;
+}
+
+/* Recomendaciones */
+.recommendations-block {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.recommendations-block h3 {
+    margin-bottom: 15px;
+    color: var(--neon-cyan, #00ffff);
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.recommendations-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.recommendations-list li {
+    background: #1a0b3d; /* Fondo ligeramente morado oscuro */
+    border-left: 5px solid var(--neon-magenta, #ff00ff);
+    padding: 12px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: #eee;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* CTA Final Dinámico */
+.cta-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.final-cta-btn {
+    /* Herencia del estilo del botón principal, pero más grande */
+    font-size: 1.2rem;
+    padding: 18px 35px;
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease-in-out;
+}
+
+.final-cta-btn:hover {
+    transform: scale(1.05);
+}
+
+.cta-info {
+    font-size: 0.85rem;
+    color: #b18deb;
+    margin-top: 15px;
+}
+
+/* Botones de Compartir (Social Share) */
+.social-share {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px dashed #3a0050;
+}
+
+.social-share p {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.btn-share {
+    background: transparent;
+    border: 1px solid var(--neon-cyan, #00ffff);
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    color: var(--neon-cyan, #00ffff);
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-share:hover {
+    background: var(--neon-cyan, #00ffff);
+    color: #0c0022;
+    box-shadow: 0 0 15px var(--neon-cyan, #00ffff);
+}
+
+/* Animación (Opcional) */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }

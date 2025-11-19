@@ -14,21 +14,117 @@
 
     <div class="container quiz-container" id="quiz-page">
         
-        <div class="progress-bar-container">
-            <div class="progress-bar-fill" id="progressBarFill"></div>
-            <div class="progress-bar-text" id="progressBarText"></div>
-        </div>
-        
-        <div id="quiz-content" class="fade-in">
+        <div id="quiz-intro" style="display: none;"> <h1 class="neon-magenta">Antes de empezar… cuéntame tu idea 💡</h1>
+            
+                <label for="ideaName" class="neon-cyan">
+                    ¿Cómo se llama tu idea, proyecto o startup?
+                </label>
+                <p class="small-text">(No tiene que ser perfecto. Incluso si le pones un nombre provisional, sirve.)</p>
+
+                <input type="text" id="ideaName" placeholder="👉 Nombre de la idea / proyecto / startup" class="text-input" required>
+
+                <div class="info-block">
+                    <h2 class="neon-magenta">🎮 ¿Qué viene ahora?</h2>
+                    <p>Estás a punto de entrar al Quiz Interactivo de madurez y validación, diseñado para emprendedores que quieren saber si su idea puede sobrevivir… o necesita un power-up.</p>
+                    <ul>
+                        <li>Responder pocas preguntas, rápidas y directas</li>
+                        <li>Recibir una evaluación honesta (sin rodeos)</li>
+                        <li>Obtener acciones concretas para avanzar tu idea</li>
+                        <li>Saber si estás listo para construir, mejorar… o replantear</li>
+                    </ul>
+                </div>
+
+                <button id="startQuizBtn" class="btn" disabled style="margin-left: 450px; margin-top: 30px;">
+                    CONTINUAR ▶
+                </button>
             </div>
 
-        <div class="quiz-navigation">
-            <button id="prevBtn" class="btn-secondary" style="visibility: hidden;">◀ VOLVER</button>
-            <button id="nextBtn" class="btn" disabled>CONTINUAR ▶</button>
-        </div>
+        <div id="quiz-container" style="display: none;"> 
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progressBarFill"></div>
+                <div class="progress-bar-text" id="progressBarText"></div>
+            </div>
         
-    </div>
+ 
+            <div id="quiz-content" class="fade-in"></div>
 
+            <div class="quiz-navigation">
+                <button id="prevBtn" class="btn-secondary" style="visibility: hidden;">◀ VOLVER</button>
+                <button id="nextBtn" class="btn" disabled>CONTINUAR ▶</button>
+            </div>
+        </div>   
+
+        <div id="results-form-content" class="fade-in" style="display: none;">
+
+            <h2 class="neon-magenta form-title">¡Misión Cumplida!</h2>
+            <h3 class="neon-cyan form-subtitle">Guarda tu progreso y recibe tu diagnóstico.</h3>
+
+            <p class="small-text form-info">
+                Tu nivel de madurez está listo. Déjanos tus datos para enviarte el plan de acción, tu puntaje y los pasos críticos para convertir tu idea en un producto real.
+            </p>
+        
+            <form id="resultsForm" class="data-form">
+
+                <label for="fullName" class="neon-cyan">Nombre</label>
+                <input type="text" id="fullName" placeholder="👾 Neo Emprendedor" class="text-input" required>
+            
+                <label for="email" class="neon-cyan">Email</label>
+                <input type="email" id="email" placeholder="📧 tu-código@matrix.com" class="text-input" required>
+
+                <label for="ideaNameDisplay" class="neon-cyan">Tu Idea/Proyecto</label>
+                <input type="text" id="ideaNameDisplay" class="text-input" disabled>
+            
+                <button type="submit" id="submitResultsBtn" class="btn final-btn">
+                    RECIBIR DIAGNÓSTICO (GRATIS)
+                </button>
+
+                <p class="small-text privacy-note">
+                    🔒 Tus datos están seguros. No enviamos spam, solo valor.
+                </p>
+            </form>
+        </div>
+
+            <div id="results-content" style="display: none;" class="fade-in">
+
+                <h2 class="neon-magenta results-title">Diagnóstico de Madurez de tu Idea</h2>
+
+                <div class="score-display-block">
+                    <p class="score-label neon-cyan">Tu Nivel de Madurez es:</p>
+                    <h1 id="maturityLevel" class="level-text">...</h1> 
+                    <div id="scoreValue" class="score-value">--/100</div> 
+                </div>
+
+                <div class="recommendations-block">
+                    <h3 class="neon-cyan">✅ ¿Y ahora qué haces? Te explicamos los siguientes pasos:</h3>
+                    <ul id="recommendationsList" class="recommendations-list"> 
+                        </ul>
+                </div>
+            
+                <div class="cta-section">
+                    <button id="mainCtaBtn" class="btn final-cta-btn">
+                        [CTA Dinámico]
+                    </button>
+                    <p class="cta-info" id="ctaInfo">
+                        Te explicamos los siguientes pasos según tu etapa.
+                    </p>
+                </div>
+
+                <div class="social-share">
+                    <p class="small-text neon-cyan">Comparte tu Diagnóstico:</p>
+                    <button class="btn-share" data-channel="whatsapp">
+                        <span class="neon-cyan">WhatsApp</span>
+                    </button>
+                    <button class="btn-share" data-channel="linkedin">
+                        <span class="neon-cyan">LinkedIn</span>
+                    </button>
+                    <button class="btn-share" data-channel="x">
+                        <span class="neon-cyan">X (Twitter)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
     <script src="quiz.js"></script>
 </body>
 </html>
