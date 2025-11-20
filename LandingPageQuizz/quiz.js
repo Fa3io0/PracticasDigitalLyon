@@ -42,117 +42,117 @@ const questions = [
             { text: "No", value: 2 }
         ],
     },
-//     {
-//         id: 5,
-//         question: "¿Tienes métricas claras para medir éxito?",
-//         type: 'multiple',
-//         options: [
-//             { text: "Sí, definidas", value: 1 },
-//             { text: "Parcialmente", value: 2 },
-//             { text: "No, aún no", value: 3}
-//         ],
-//     },
-//     {
+    {
+        id: 5,
+        question: "¿Tienes métricas claras para medir éxito?",
+        type: 'multiple',
+        options: [
+            { text: "Sí, definidas", value: 1 },
+            { text: "Parcialmente", value: 2 },
+            { text: "No, aún no", value: 3}
+        ],
+    },
+    {
 
-//         // Bloque 2: Modelo de Negocio
-//         id: 6,
-//         question: "¿Sabes exactamente cómo monetizarás tu producto?",
-//         type: 'scale', 
-//         options: [
-//             { text: "1 - Nada", value: 1 },
-//             { text: "2", value: 2 },
-//             { text: "3", value: 3},
-//             { text: "4", value: 4 },
-//             { text: "5 - Totalmente", value: 5 }
-//         ],
-//     },
-//     {
-//         id: 7,
-//         question: "¿Has validado que los usuarios pagarían por tu solución?",
-//         type: 'multiple',
-//         options: [
-//             { text: "Sí, con ventas reales", value: 1 },
-//             { text: "Sí, con interés/promesas", value: 2 },
-//             { text: "No, es supuesto", value: 3}
-//         ],
-//     },
-//     {
-//         id: 8,
-//         question: "¿Tienes calculado tu costo de adquisición de cliente (CAC)?",
-//         type: 'yesno',
-//         options: [
-//             { text: "Sí", value: 1 },
-//             { text: "No", value: 2 }
-//         ],
-//     },
-//     {
-//         id: 9,
-//         question: "¿Conoces tu margen de beneficio por cliente?",
-//         type: 'scale', 
-//         options: [
-//             { text: "1 - Nada", value: 1 },
-//             { text: "2", value: 2 },
-//             { text: "3", value: 3},
-//             { text: "4", value: 4 },
-//             { text: "5 - Totalmente", value: 5 }
-//         ],
-//     },
-//     {
-//         id: 10,
-//         question: "¿Tu modelo de ingresos es recurrente o único?",
-//         type: 'multiple',
-//         options: [
-//             { text: "Recurrente", value: 1 },
-//             { text: "Mixto", value: 2 },
-//             { text: "Único", value: 3},
-//             { text: "No definido", value: 4 }
-//         ],
-//     },
-//     {
-//         // Bloque 3: Producto & Desarrollo
-//         id: 11,
-//         question: "¿Tienes un MVP funcional y probado por usuarios?",
-//         type: 'multiple',
-//         options: [
-//             { text: "Sí, en uso", value: 1 },
-//             { text: "Sí, sin validar", value: 2 },
-//             { text: "En desarrollo", value: 3},
-//             { text: "Solo idea", value: 4 }
-//         ],
-//     },
-//     {
-//         id: 12,        
-//         question: "¿Tu producto resuelve un problema real y urgente?",
-//         type: 'scale', 
-//         options: [
-//             { text: "1 - Nunca", value: 1 },
-//             { text: "2", value: 2 },
-//             { text: "3", value: 3},
-//             { text: "4", value: 4 },
-//             { text: "5 - Muy frecuentemente", value: 5 }
-//         ],
-//     },
-//     {
-//         id: 13,
-//         question: "¿Has iterado el producto basándote en feedback real?",
-//         type: 'yesno',
-//         options: [
-//             { text: "Sí", value: 1 },
-//             { text: "No", value: 2 }
-//         ],
-//     },
-//     {
-//         id: 14,
-//         question: "¿Tienes roadmap de producto para los próximos 3 meses?",
-//         type: 'scale', 
-//         options: [
-//             { text: "1 - Nada", value: 1 },
-//             { text: "2", value: 2 },
-//             { text: "3", value: 3},
-//             { text: "4", value: 4 },
-//             { text: "5 - Totalmente", value: 5 }
-//         ],
-//     },
+        // Bloque 2: Modelo de Negocio
+        id: 6,
+        question: "¿Sabes exactamente cómo monetizarás tu producto?",
+        type: 'scale', 
+        options: [
+            { text: "1 - Nada", value: 1 },
+            { text: "2", value: 2 },
+            { text: "3", value: 3},
+            { text: "4", value: 4 },
+            { text: "5 - Totalmente", value: 5 }
+        ],
+    },
+    {
+        id: 7,
+        question: "¿Has validado que los usuarios pagarían por tu solución?",
+        type: 'multiple',
+        options: [
+            { text: "Sí, con ventas reales", value: 1 },
+            { text: "Sí, con interés/promesas", value: 2 },
+            { text: "No, es supuesto", value: 3}
+        ],
+    },
+    {
+        id: 8,
+        question: "¿Tienes calculado tu costo de adquisición de cliente (CAC)?",
+        type: 'yesno',
+        options: [
+            { text: "Sí", value: 1 },
+            { text: "No", value: 2 }
+        ],
+    },
+    {
+        id: 9,
+        question: "¿Conoces tu margen de beneficio por cliente?",
+        type: 'scale', 
+        options: [
+            { text: "1 - Nada", value: 1 },
+            { text: "2", value: 2 },
+            { text: "3", value: 3},
+            { text: "4", value: 4 },
+            { text: "5 - Totalmente", value: 5 }
+        ],
+    },
+    {
+        id: 10,
+        question: "¿Tu modelo de ingresos es recurrente o único?",
+        type: 'multiple',
+        options: [
+            { text: "Recurrente", value: 1 },
+            { text: "Mixto", value: 2 },
+            { text: "Único", value: 3},
+            { text: "No definido", value: 4 }
+        ],
+    },
+    {
+        // Bloque 3: Producto & Desarrollo
+        id: 11,
+        question: "¿Tienes un MVP funcional y probado por usuarios?",
+        type: 'multiple',
+        options: [
+            { text: "Sí, en uso", value: 1 },
+            { text: "Sí, sin validar", value: 2 },
+            { text: "En desarrollo", value: 3},
+            { text: "Solo idea", value: 4 }
+        ],
+    },
+    {
+        id: 12,        
+        question: "¿Tu producto resuelve un problema real y urgente?",
+        type: 'scale', 
+        options: [
+            { text: "1 - Nunca", value: 1 },
+            { text: "2", value: 2 },
+            { text: "3", value: 3},
+            { text: "4", value: 4 },
+            { text: "5 - Muy frecuentemente", value: 5 }
+        ],
+    },
+    {
+        id: 13,
+        question: "¿Has iterado el producto basándote en feedback real?",
+        type: 'yesno',
+        options: [
+            { text: "Sí", value: 1 },
+            { text: "No", value: 2 }
+        ],
+    },
+    {
+        id: 14,
+        question: "¿Tienes roadmap de producto para los próximos 3 meses?",
+        type: 'scale', 
+        options: [
+            { text: "1 - Nada", value: 1 },
+            { text: "2", value: 2 },
+            { text: "3", value: 3},
+            { text: "4", value: 4 },
+            { text: "5 - Totalmente", value: 5 }
+        ],
+    },
 //     {
 //         id: 15,
 //         question: "¿Sabes cuál es tu diferenciador clave vs competencia?",
@@ -398,7 +398,7 @@ function renderQuestion(index) {
         // 2. Insertar el contenido de la pregunta y opciones
         quizContent.innerHTML = `
             <h2 class="neon-magenta">Pregunta ${index + 1}/${totalQuestions}:</h2>
-            <h3 class="neon-cyan">${questionData.question}</h3>
+            <h3 class="questions-quizz">${questionData.question}</h3>
             <div id="options-container">
                 ${optionsHtml}
             </div>
@@ -506,7 +506,7 @@ function goToNextQuestion() {
 
         // Llenar el campo 'Idea/Proyecto' con el nombre guardado
         const ideaName = localStorage.getItem(IDEA_NAME_KEY) || 'Mi Proyecto Secreto';
-        ideaNameDisplayInput.value = ideaName;
+        // ideaNameDisplayInput.value = ideaName; // CAMBIO: Mostrar el nombre en el input deshabilitado
         
         // Deshabilitar el botón Siguiente/Finalizar
         nextBtn.disabled = true; 
@@ -629,7 +629,7 @@ function handleResultsSubmission(event) {
     // 1. Recoger datos de los inputs del formulario
     const name = fullNameInput.value.trim();
     const email = emailInput.value.trim();
-    const ideaName = ideaNameDisplayInput.value;
+    // const ideaName = ideaNameDisplayInput.value; // CAMBIO: Mostrar el nombre en el input deshabilitado
     
     // Validar Email (función que ya tienes definida)
     if (!validateEmail(email)) {

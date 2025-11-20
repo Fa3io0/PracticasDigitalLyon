@@ -86,14 +86,14 @@ body::after {
     font-family: 'Press Start 2P', cursive;
     letter-spacing: 2px;
     display: block !important;
-    padding: 0px 0px 40px; /*Separador del titulo y sub de antes del quizz */
+    /*padding: 0px 0px 40px; Separador del titulo y sub de antes del quizz */
 }
 
 .neon-magenta {
     color: #ffffff;
     font-family: 'Press Start 2P', cursive;
     letter-spacing: 2px;
-    padding: 0px 0px 30px; /* Separador del titulo y sub de antes del quizz */
+    /*padding: 0px 0px 30px;  Separador del titulo y sub de antes del quizz */
 }
 
 .neon-yellow {
@@ -111,9 +111,15 @@ body::after {
 .container {
     position: relative;
     z-index: 1;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 1800px;
+    margin: 80px 60px;
+}
+
+.container-steps {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 10px 10px;
 }
 
 /* Hero Section */
@@ -189,10 +195,12 @@ body::after {
 
 .hero h1 .part1 {
     color: #b18deb;
+    font-size: 3rem;
 }
 
 .hero h1 .part2 {
     color: #fff;
+    font-size: 3rem;
 }
 
 h2 .part1 {
@@ -240,6 +248,143 @@ h1 .part2 {
     text-align: center;
 }
 
+/* Promo Movil */
+
+/* Contenedor de los botones CTA */
+.cta-buttons-container {
+    display: flex; /* Para poner los botones uno al lado del otro */
+    gap: 20px; /* Espacio entre los botones */
+    flex-wrap: wrap; 
+    margin-top: 40px; /* Separación del párrafo superior */
+}
+
+/* Estilo del Botón Principal (Quiz) - Reutiliza el estilo base .btn */
+.primary-btn-quiz {
+    /* Mantendrá el estilo de tu .btn base (background: #5c24b8;) */
+    background: #5c24b8;
+    border-color: #5c24b8;
+    box-shadow: 0 0 15px #5c24b8; 
+}
+
+/* NUEVO Estilo para el Botón Secundario (App) */
+.secondary-btn-app { 
+    display: inline-block;
+    padding: 20px 40px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    text-decoration: none;
+    color: #ffffff;
+    background: #5c1558;
+    border: 1px solid #000000;
+    cursor: pointer;
+    transition: all 0.1s;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.secondary-btn-app:hover {
+    background: var(--neon-cyan, #5c24b8);
+    color: #0d0221;
+    box-shadow: 0 0 20px var(--neon-cyan, #5c24b8);
+    transform: translate(-2px, -2px); /* Mantener el efecto de hover de tu .btn base */
+}
+
+/* ==================================== */
+/* ESTILOS PARA LA SECCIÓN DEL MÓVIL Y WEBAPP */
+/* ==================================== */
+
+.webapp-promo-container {
+    flex: 2; /* Ocupa el espacio que antes tenía hero-qna */
+    text-align: center;
+    position: relative;
+    max-width: 500px; /* Mismo tamaño que tu hero-qna anterior */
+    margin: auto;
+    z-index: 5;
+}
+
+.mobile-frame {
+    width: 100%;
+    max-width: 300px; /* Ancho máximo del móvil */
+    margin: 0 auto;
+    border: 10px solid #222; 
+    border-radius: 20px; 
+    overflow: hidden; 
+    position: relative;
+    background-color: #000;
+    box-shadow: 0 0 25px #ff00ff, 0 0 10px rgba(255, 0, 255, 0.5); /* Efecto neón */
+    aspect-ratio: 9 / 19; 
+    
+    /* Simula el borde 3D del pixel art */
+    border-right: 5px solid #333;
+    border-bottom: 5px solid #333;
+}
+
+.webapp-screenshot {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; 
+}
+
+.mobile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 2, 33, 0.9); /* Fondo oscuro del quiz */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+.mobile-frame:hover .mobile-overlay {
+    opacity: 1; 
+}
+
+.overlay-text {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px #00ffff;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.5;
+}
+
+.overlay-btn {
+    /* Reutiliza estilo de botón base y aplica neón */
+    background: #ff00ff;
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+    padding: 10px 20px;
+    font-size: 0.6rem;
+}
+
+.overlay-btn:hover {
+    background: #e600e6;
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+.download-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    /* width: 1000px; */
+    color: #ffffff;
+    text-shadow: 10px 0 10px #ff00ff, 0 0 5px #fff;
+    transform: rotate(5deg); 
+    /* position: absolute; */
+    bottom: -50px; 
+    right: 0px; 
+    z-index: 5;
+}
+
 /* Terminal-Style Buttons with Pixel Art */
 .btn {
     display: inline-block;
@@ -272,22 +417,10 @@ h1 .part2 {
     text-align: center;
 }
 
-/* .btn::before {
-    content: '▶';
-    left: 15px;
-}
-
-.btn::after {
-    content: '◀';
-    right: 15px;
-} */
-
 .btn:hover {
-    box-shadow: 
-        0 0 0 2px #000,
-        0 0 40px #000,
-        inset 0 0 30px #000,
-        8px 8px 0 #000;
+    background: var(--neon-cyan, #5c1558);
+    color: #0d0221;
+    box-shadow: 0 0 20px var(--neon-cyan, #5c1558);
     transform: translate(-2px, -2px);
 }
 
@@ -561,8 +694,8 @@ h1 .part2 {
 /* Dark Section - Deep Space */
 .dark-section {
     background: linear-gradient(180deg, #0d0221 0%, #1a0b3d 50%, #0d0221 100%);
-    padding: 60px 20px;
-    margin: 60px 0;
+    padding: 40px 20px;
+    margin: 125px 80px; /* Espacio entre el como funciona y Rompe el silencio*/
     border-top: 4px solid #5c24b8;
     border-bottom: 4px solid #5c24b8;
     font-size: 1rem;
@@ -615,10 +748,10 @@ footer p {
         margin-left: 0;
     }
     
-    .btn {
+    /* .btn {
         padding: 15px 30px;
         font-size: 0.65rem;
-    }
+    } */
     
     .btn::before,
     .btn::after {
@@ -631,5 +764,49 @@ footer p {
     
     .step-number {
         font-size: 2rem;
+    }
+
+    .hero-grid {
+        flex-direction: column; /* Apila el contenido y el móvil */
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%; /* Ocupa todo el ancho */
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .hero-content p {
+        text-align: center; /* Centra los párrafos */
+    }
+
+    .cta-buttons-container {
+        justify-content: center; /* Centra los botones apilados */
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 100%; /* Botones de ancho completo */
+        margin-bottom: 0;
+    }
+
+    .webapp-promo-container {
+        position: static; /* Quita el posicionamiento absoluto */
+        transform: none;
+        margin-top: 40px;
+        width: 100%;
+    }
+    
+    .mobile-frame {
+        max-width: 250px; /* Reduce el tamaño del móvil en responsive */
+    }
+
+    .download-text {
+        position: static;
+        transform: none;
+        margin-top: 20px;
     }
 }

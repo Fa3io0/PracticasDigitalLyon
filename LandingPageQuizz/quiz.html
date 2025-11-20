@@ -16,10 +16,10 @@
         
         <div id="quiz-intro" style="display: none;"> <h1 class="neon-magenta">Antes de empezar… cuéntame tu idea 💡</h1>
             
-                <label for="ideaName" class="neon-cyan">
+                <!-- <label for="ideaName" class="neon-cyan">
                     ¿Cómo se llama tu idea, proyecto o startup?
-                </label>
-                <p class="small-text">(No tiene que ser perfecto. Incluso si le pones un nombre provisional, sirve.)</p>
+                </label> -->
+                <p class="small-text">¿Cómo se llama tu idea, proyecto o startup? (No tiene que ser perfecto. Incluso si le pones un nombre provisional, sirve.)</p>
 
                 <input type="text" id="ideaName" placeholder="👉 Nombre de la idea / proyecto / startup" class="text-input" required>
 
@@ -57,7 +57,7 @@
         <div id="results-form-content" class="fade-in" style="display: none;">
 
             <h2 class="neon-magenta form-title">¡Misión Cumplida!</h2>
-            <h3 class="neon-cyan form-subtitle">Guarda tu progreso y recibe tu diagnóstico.</h3>
+            <h3 class="form-subtitle">Guarda el diagnóstico de tu startup.</h3>
 
             <p class="small-text form-info">
                 Tu nivel de madurez está listo. Déjanos tus datos para enviarte el plan de acción, tu puntaje y los pasos críticos para convertir tu idea en un producto real.
@@ -66,15 +66,15 @@
             <form id="resultsForm" class="data-form">
 
                 <label for="fullName" class="neon-cyan">Nombre</label>
-                <input type="text" id="fullName" placeholder="👾 Neo Emprendedor" class="text-input" required>
+                <input type="text" id="fullName" placeholder="👾 Nombre Completo" class="text-input" required>
             
                 <label for="email" class="neon-cyan">Email</label>
-                <input type="email" id="email" placeholder="📧 tu-código@matrix.com" class="text-input" required>
+                <input type="email" id="email" placeholder="📧 Correo electrónico" class="text-input" required>
 
-                <label for="ideaNameDisplay" class="neon-cyan">Tu Idea/Proyecto</label>
-                <input type="text" id="ideaNameDisplay" class="text-input" disabled>
+                <!-- <label for="ideaNameDisplay" class="neon-cyan">Tu Idea/Proyecto</label>
+                <input type="text" id="ideaNameDisplay" class="text-input" disabled> -->
             
-                <button type="submit" id="submitResultsBtn" class="btn final-btn">
+                <button type="submit" id="submitResultsBtn" class="final-btn">
                     RECIBIR DIAGNÓSTICO (GRATIS)
                 </button>
 
