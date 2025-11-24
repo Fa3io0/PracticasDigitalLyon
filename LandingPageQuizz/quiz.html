@@ -56,11 +56,20 @@
 
         <div id="results-form-content" class="fade-in" style="display: none;">
 
-            <h2 class="neon-magenta form-title">¡Misión Cumplida!</h2>
+            <!-- <h2 class="neon-magenta form-title">¡Misión Cumplida!</h2> -->
+            <h2 class="neon-magenta form-title"> 
+                    <span class="part1">¡Misión</span>
+                    <span class="part2">Cumplida!</span>
+            </h2>
+            
             <h3 class="form-subtitle">Guarda el diagnóstico de tu startup.</h3>
 
-            <p class="small-text form-info">
+            <!-- <p class="small-text form-info">
                 Tu nivel de madurez está listo. Déjanos tus datos para enviarte el plan de acción, tu puntaje y los pasos críticos para convertir tu idea en un producto real.
+            </p> PROPUESTA CAMBIO-->
+
+            <p class="small-text ">
+                Tu nivel de madurez está listo. Déjanos tus datos para enviarte el plan de acción, tu puntaje y los pasos para convertir tu idea en un producto real.
             </p>
         
             <form id="resultsForm" class="data-form">
@@ -70,6 +79,9 @@
             
                 <label for="email" class="neon-cyan">Email</label>
                 <input type="email" id="email" placeholder="📧 Correo electrónico" class="text-input" required>
+
+                <label for="phone" class="neon-cyan">Teléfono</label>
+                <input type="tel" id="phone" placeholder="📞 Número de teléfono" class="text-input" required>
 
                 <!-- <label for="ideaNameDisplay" class="neon-cyan">Tu Idea/Proyecto</label>
                 <input type="text" id="ideaNameDisplay" class="text-input" disabled> -->
@@ -101,7 +113,7 @@
                 </div>
             
                 <div class="cta-section">
-                    <button id="mainCtaBtn" class="btn final-cta-btn">
+                    <button id="mainCtaBtn" class="final-cta-btn">
                         [CTA Dinámico]
                     </button>
                     <p class="cta-info" id="ctaInfo">
@@ -114,8 +126,8 @@
                     <button class="btn-share" data-channel="whatsapp">
                         <span class="neon-cyan">WhatsApp</span>
                     </button>
-                    <button class="btn-share" data-channel="linkedin">
-                        <span class="neon-cyan">LinkedIn</span>
+                    <button class="btn-share" data-channel="gmail">
+                        <span class="neon-cyan">Gmail</span>
                     </button>
                     <button class="btn-share" data-channel="x">
                         <span class="neon-cyan">X (Twitter)</span>

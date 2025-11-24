@@ -139,7 +139,7 @@
     position: relative;
     padding-left: 25px;
     margin-bottom: 10px;
-    color: #c4faff; /* Un cian más claro para los puntos */
+    color: #fff; /* Un cian más claro para los puntos */
     font-size: 1em;
 }
 
@@ -390,15 +390,31 @@
 
 .final-cta-btn {
     /* Herencia del estilo del botón principal, pero más grande */
-    font-size: 1.2rem;
-    padding: 18px 35px;
+    /* font-size: 1.2rem; */
+    padding: 18px 35px 40px 35px;
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
     transition: all 0.3s ease-in-out;
+    display: inline-block;
+    /* padding: 20px 40px; */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #ffffff;
+    background: #5c24b8;
+    border: 1px solid #000000;
+    cursor: pointer;
+    transition: all 0.1s;
+    position: relative;
+    text-transform: uppercase;
 }
 
 .final-cta-btn:hover {
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
+    background: var(--neon-cyan, #ff00ff);
+    color: #0d0221;
+    box-shadow: 0 0 20px var(--neon-cyan, #ff00ff);
+    transform: translate(-2px, -2px);
 }
 
 .cta-info {

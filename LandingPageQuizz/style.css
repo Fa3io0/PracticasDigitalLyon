@@ -188,6 +188,7 @@ body::after {
 .hero h1 {
     font-size: clamp(2rem, 3vw, 2.3rem);
     margin-bottom: 30px;
+    margin: 40px 0;
     line-height: 1.6;
     display: flex;
     flex-wrap: wrap;
@@ -195,12 +196,12 @@ body::after {
 
 .hero h1 .part1 {
     color: #b18deb;
-    font-size: 3rem;
+    font-size: 2.8rem;
 }
 
 .hero h1 .part2 {
     color: #fff;
-    font-size: 3rem;
+    font-size: 2.9rem;
 }
 
 h2 .part1 {
@@ -298,7 +299,7 @@ h1 .part2 {
     text-align: center;
     position: relative;
     max-width: 500px; /* Mismo tamaño que tu hero-qna anterior */
-    margin: auto;
+    margin: auto; /* Ajusta la posición horizontal */;
     z-index: 5;
 }
 

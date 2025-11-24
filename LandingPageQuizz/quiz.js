@@ -4,16 +4,18 @@ const questions = [
         // Bloque 1: Estrategia & Objetivos
         id: 1,
         question: "¿Tu propuesta de valor cabe en una frase clara?",
-        type: 'yesno', 
+        type: 'yesno',
+        maxScore: 5,
         options: [
-            { text: "Sí", value: 1 },
-            { text: "No", value: 2 }
+            { text: "Sí", value: 5 },
+            { text: "No", value: 1 }
         ],
     },
     {
         id: 2,
         question: "¿Tu cliente ideal está claramente definido?",
-        type: 'scale', 
+        type: 'scale',
+        maxScore: 5, 
         options: [
             { text: "1 - Nada", value: 1 },
             { text: "2", value: 2 },
@@ -26,30 +28,33 @@ const questions = [
         id: 3,
         question: "¿Cuál es tu principal meta a 6 meses?",
         type: 'multiple', 
+        maxScore: 5,
         options: [
             { text: "Validar", value: 1 },
             { text: "Crecer", value: 2 },
             { text: "Monetizar", value: 4 },
-            { text: "Escalar", value: 55 }
+            { text: "Escalar", value: 5 }
         ],
     },
     {
         id: 4,
         question: "¿Conoces a tus 3 competidores directos?",
         type: 'yesno',
+        maxScore: 5,
         options: [
-            { text: "Sí", value: 1 },
-            { text: "No", value: 2 }
+            { text: "Sí", value: 5 },
+            { text: "No", value: 1 }
         ],
     },
     {
         id: 5,
         question: "¿Tienes métricas claras para medir éxito?",
         type: 'multiple',
+        maxScore: 5,
         options: [
-            { text: "Sí, definidas", value: 1 },
-            { text: "Parcialmente", value: 2 },
-            { text: "No, aún no", value: 3}
+            { text: "Sí, definidas", value: 5 },
+            { text: "Parcialmente", value: 3 },
+            { text: "No, aún no", value: 1}
         ],
     },
     {
@@ -57,7 +62,8 @@ const questions = [
         // Bloque 2: Modelo de Negocio
         id: 6,
         question: "¿Sabes exactamente cómo monetizarás tu producto?",
-        type: 'scale', 
+        type: 'scale',
+        maxScore: 5,
         options: [
             { text: "1 - Nada", value: 1 },
             { text: "2", value: 2 },
@@ -70,81 +76,28 @@ const questions = [
         id: 7,
         question: "¿Has validado que los usuarios pagarían por tu solución?",
         type: 'multiple',
+        maxScore: 5,
         options: [
-            { text: "Sí, con ventas reales", value: 1 },
-            { text: "Sí, con interés/promesas", value: 2 },
-            { text: "No, es supuesto", value: 3}
+            { text: "Sí, con ventas reales", value: 5 },
+            { text: "Sí, con interés/promesas", value: 3 },
+            { text: "No, es supuesto", value: 1}
         ],
     },
     {
         id: 8,
         question: "¿Tienes calculado tu costo de adquisición de cliente (CAC)?",
         type: 'yesno',
+        maxScore: 5,
         options: [
-            { text: "Sí", value: 1 },
-            { text: "No", value: 2 }
+            { text: "Sí", value: 5 },
+            { text: "No", value: 1 }
         ],
     },
     {
         id: 9,
         question: "¿Conoces tu margen de beneficio por cliente?",
-        type: 'scale', 
-        options: [
-            { text: "1 - Nada", value: 1 },
-            { text: "2", value: 2 },
-            { text: "3", value: 3},
-            { text: "4", value: 4 },
-            { text: "5 - Totalmente", value: 5 }
-        ],
-    },
-    {
-        id: 10,
-        question: "¿Tu modelo de ingresos es recurrente o único?",
-        type: 'multiple',
-        options: [
-            { text: "Recurrente", value: 1 },
-            { text: "Mixto", value: 2 },
-            { text: "Único", value: 3},
-            { text: "No definido", value: 4 }
-        ],
-    },
-    {
-        // Bloque 3: Producto & Desarrollo
-        id: 11,
-        question: "¿Tienes un MVP funcional y probado por usuarios?",
-        type: 'multiple',
-        options: [
-            { text: "Sí, en uso", value: 1 },
-            { text: "Sí, sin validar", value: 2 },
-            { text: "En desarrollo", value: 3},
-            { text: "Solo idea", value: 4 }
-        ],
-    },
-    {
-        id: 12,        
-        question: "¿Tu producto resuelve un problema real y urgente?",
-        type: 'scale', 
-        options: [
-            { text: "1 - Nunca", value: 1 },
-            { text: "2", value: 2 },
-            { text: "3", value: 3},
-            { text: "4", value: 4 },
-            { text: "5 - Muy frecuentemente", value: 5 }
-        ],
-    },
-    {
-        id: 13,
-        question: "¿Has iterado el producto basándote en feedback real?",
-        type: 'yesno',
-        options: [
-            { text: "Sí", value: 1 },
-            { text: "No", value: 2 }
-        ],
-    },
-    {
-        id: 14,
-        question: "¿Tienes roadmap de producto para los próximos 3 meses?",
-        type: 'scale', 
+        type: 'scale',
+        maxScore: 5,
         options: [
             { text: "1 - Nada", value: 1 },
             { text: "2", value: 2 },
@@ -154,19 +107,82 @@ const questions = [
         ],
     },
 //     {
+//         id: 10,
+//         question: "¿Tu modelo de ingresos es recurrente o único?",
+//         type: 'multiple',
+//         maxScore: 5,
+//         options: [
+//             { text: "Recurrente", value: 5 },
+//             { text: "Mixto", value: 4 },
+//             { text: "Único", value: 3},
+//             { text: "No definido", value: 1 }
+//         ],
+//     },
+//     {
+//         // Bloque 3: Producto & Desarrollo
+//         id: 11,
+//         question: "¿Tienes un MVP funcional y probado por usuarios?",
+//         type: 'multiple',
+//         maxScore: 5,
+//         options: [
+//             { text: "Sí, en uso", value: 5 },
+//             { text: "Sí, sin validar", value: 4 },
+//             { text: "En desarrollo", value: 3},
+//             { text: "Solo idea", value: 1 }
+//         ],
+//     },
+//     {
+//         id: 12,        
+//         question: "¿Tu producto resuelve un problema real y urgente?",
+//         type: 'scale',
+//         maxScore: 5, 
+//         options: [
+//             { text: "1 - Nunca", value: 1 },
+//             { text: "2", value: 2 },
+//             { text: "3", value: 3},
+//             { text: "4", value: 4 },
+//             { text: "5 - Muy frecuentemente", value: 5 }
+//         ],
+//     },
+//     {
+//         id: 13,
+//         question: "¿Has iterado el producto basándote en feedback real?",
+//         type: 'yesno',
+//         maxScore: 5,
+//         options: [
+//             { text: "Sí", value: 5 },
+//             { text: "No", value: 1 }
+//         ],
+//     },
+//     {
+//         id: 14,
+//         question: "¿Tienes roadmap de producto para los próximos 3 meses?",
+//         type: 'scale',
+//         maxScore: 5, 
+//         options: [
+//             { text: "1 - Nada", value: 1 },
+//             { text: "2", value: 2 },
+//             { text: "3", value: 3},
+//             { text: "4", value: 4 },
+//             { text: "5 - Totalmente", value: 5 }
+//         ],
+//     },
+//     {
 //         id: 15,
 //         question: "¿Sabes cuál es tu diferenciador clave vs competencia?",
 //         type: 'yesno',
+//         maxScore: 5,
 //         options: [
-//             { text: "Sí", value: 1 },
-//             { text: "No", value: 2 }
+//             { text: "Sí", value: 5 },
+//             { text: "No", value: 1 }
 //         ],
 //     },
 //     {
 //         // Bloque 4: Operaciones & Procesos
 //         id: 16,
 //         question: "¿Tienes documentados tus procesos clave?",
-//         type: 'scale', 
+//         type: 'scale',
+//         maxScore: 5,
 //         options: [
 //             { text: "1 - Nada", value: 1 },
 //             { text: "2", value: 2 },
@@ -179,25 +195,28 @@ const questions = [
 //         id: 17,
 //         question: "¿Usas herramientas para gestionar tareas y proyectos?",
 //         type: 'multiple',
+//         maxScore: 5,
 //         options: [
-//             { text: "Sí, sistemáticamente", value: 1 },
-//             { text: "A veces", value: 2 },
-//             { text: "No", value: 3}
+//             { text: "Sí, sistemáticamente", value: 5 },
+//             { text: "A veces", value: 3 },
+//             { text: "No", value: 1 }
 //         ],
 //     },
 //     {
 //         id: 18,
 //         question: "¿Mides tiempo y recursos en cada etapa de desarrollo?",
 //         type: 'yesno',
+//         maxScore: 5,
 //         options: [
-//             { text: "Sí", value: 1 },
-//             { text: "No", value: 2 }
+//             { text: "Sí", value: 5 },
+//             { text: "No", value: 1 }
 //         ],
 //     },
 //     {
 //         id: 19,
 //         question: "¿Tienes un sistema para gestionar clientes/usuarios?",
 //         type: 'scale', 
+//         maxScore: 5,
 //         options: [
 //             { text: "1 - Nada", value: 1 },
 //             { text: "2", value: 2 },
@@ -210,10 +229,11 @@ const questions = [
 //         id: 20,
 //         question: "¿Tu equipo tiene roles y responsabilidades claras?",
 //         type: 'multiple',
+//         maxScore: 5,
 //         options: [
-//             { text: "Sí, muy claras", value: 1 },
-//             { text: "Parcialmente", value: 2 },
-//             { text: "No", value: 3 }
+//             { text: "Sí, muy claras", value: 5 },
+//             { text: "Parcialmente", value: 3 },
+//             { text: "No", value: 1 }
 //         ],
 //     },
 //     {
@@ -221,6 +241,7 @@ const questions = [
 //         id: 21,
 //         question: "¿Tienes una estrategia de adquisición de usuarios?",
 //         type: 'scale', 
+//         maxScore: 5,
 //         options: [
 //             { text: "1 - Ninguna", value: 1 },
 //             { text: "2", value: 2 },
@@ -233,25 +254,28 @@ const questions = [
 //         id: 22,
 //         question: "¿Generas leads o usuarios nuevos semanalmente?",
 //         type: 'multiple',
+//         maxScore: 5,
 //         options: [
-//             { text: "Sí, consistentemente", value: 1 },
-//             { text: "A veces", value: 2 },
-//             { text: "No", value: 3}
+//             { text: "Sí, consistentemente", value: 5 },
+//             { text: "A veces", value: 3 },
+//             { text: "No", value: 1}
 //         ],
 //     },
 //     {
 //         id: 23,
 //         question: "¿Sabes qué canal de marketing funciona mejor para ti?",
 //         type: 'yesno',
+//         maxScore: 5,
 //         options: [
-//             { text: "Sí", value: 1 },
-//             { text: "No", value: 2 }
+//             { text: "Sí", value: 5 },
+//             { text: "No", value: 1 }
 //         ],
 //     },
 //     {
 //         id: 24,
 //         question: "¿Tienes un sistema de ventas o conversión definido?",
 //         type: 'scale',
+//         maxScore: 5,
 //         options: [
 //             { text: "1 - Nada", value: 1 },
 //             { text: "2", value: 2 },
@@ -264,9 +288,10 @@ const questions = [
         id: 25, 
         question: "¿Mides tu tasa de conversión de leads a clientes?", 
         type: 'yesno',
+        maxScore: 5,
         options: [
-            { text: "Sí", value: 1 },
-            { text: "No", value: 2 }
+            { text: "Sí", value: 5 },
+            { text: "No", value: 1 }
         ],
     }
 ];
@@ -299,6 +324,7 @@ const resultsForm = document.getElementById('resultsForm'); // El formulario en 
 const ideaNameDisplayInput = document.getElementById('ideaNameDisplay'); // Input deshabilitado
 const fullNameInput = document.getElementById('fullName'); // Input de nombre
 const emailInput = document.getElementById('email'); // Input de email
+const phoneInput = document.getElementById('phone'); // Input de teléfono 
 
 // 4. FUNCIONES DE LÓGICA
 
@@ -418,6 +444,8 @@ function renderQuestion(index) {
     }, 10); 
 }
 
+
+
 /**
  * Maneja la selección de una respuesta.
  * @param {Event} event 
@@ -530,11 +558,11 @@ let totalScore = 0;
 
 // Definición de Rangos y Recomendaciones (AJUSTA LOS VALORES DEL QUIZ)
 const MATURITY_RANGES = [
-    { max: 20, level: "IDEA CONFUSA 😵‍💫", recommendations: ["Define tu Propuesta de Valor única (PVU).", "Identifica tu nicho de cliente exacto.", "No construyas nada aún, ¡solo habla con usuarios!"], ctaText: "Descarga la guía gratuita 📘.", ctaUrl: "guide-url.html" },
-    { max: 40, level: "EN VALIDACIÓN 🔬", recommendations: ["Crea una Landing Page de prueba rápida.", "Lanza anuncios de bajo presupuesto para medir interés.", "Realiza entrevistas de problema (no de producto)."], ctaText: "Descarga la guía gratuita 📘.", ctaUrl: "guide-url.html" },
-    { max: 60, level: "MVP LISTO 🏗️", recommendations: ["Lanza una versión mínima (MVP) del producto.", "Establece métricas de uso y conversión (ej: Tasa de Retención).", "Calcula el Costo de Adquisición de Clientes (CAC)."], ctaText: "Agenda tu mentoría gratuita 🚀.", ctaUrl: "mentoria-booking-link.html" },
-    { max: 80, level: "STARTUP EN TRACCIÓN 📈", recommendations: ["Optimiza tu proceso de ventas/conversión.", "Busca canales de adquisición escalables y rentables.", "Documenta procesos operativos para duplicar el crecimiento."], ctaText: "Agenda tu mentoría gratuita 🚀.", ctaUrl: "mentoria-booking-link.html" },
-    { max: 100, level: "STARTUP CRECIENDO 🔥", recommendations: ["Explora nuevos mercados o segmentos de cliente.", "Invierte en automatización y desarrollo de equipos.", "Prepara tu empresa para una ronda de inversión."], ctaText: "Agenda tu mentoría gratuita 🚀.", ctaUrl: "mentoria-booking-link.html" },
+    { max: 20, level: "IDEA CONFUSA 😵‍💫", recommendations: ["Define tu Propuesta de Valor única (PVU).", "Identifica tu nicho de cliente exacto.", "No construyas nada aún, ¡solo habla con usuarios!"], ctaText: "Descarga la guía gratuita", ctaUrl: "guide-url.html" },
+    { max: 40, level: "EN VALIDACIÓN 🔬", recommendations: ["Crea una Landing Page de prueba rápida.", "Lanza anuncios de bajo presupuesto para medir interés.", "Realiza entrevistas de problema (no de producto)."], ctaText: "Descarga la guía gratuita", ctaUrl: "guide-url.html" },
+    { max: 60, level: "MVP LISTO 🏗️", recommendations: ["Lanza una versión mínima (MVP) del producto.", "Establece métricas de uso y conversión (ej: Tasa de Retención).", "Calcula el Costo de Adquisición de Clientes (CAC)."], ctaText: "Agenda tu mentoría gratuita", ctaUrl: "mentoria-booking-link.html" },
+    { max: 80, level: "STARTUP EN TRACCIÓN 📈", recommendations: ["Optimiza tu proceso de ventas/conversión.", "Busca canales de adquisición escalables y rentables.", "Documenta procesos operativos para duplicar el crecimiento."], ctaText: "Agenda tu mentoría gratuita", ctaUrl: "mentoria-booking-link.html" },
+    { max: 100, level: "STARTUP CRECIENDO 🔥", recommendations: ["Explora nuevos mercados o segmentos de cliente.", "Invierte en automatización y desarrollo de equipos.", "Prepara tu empresa para una ronda de inversión."], ctaText: "Agenda tu mentoría gratuita", ctaUrl: "mentoria-booking-link.html" },
 ];
 
 /**
@@ -554,9 +582,9 @@ function setupSocialSharing(level) {
         if (channel === 'whatsapp') {
             // WhatsApp usa 'text' para el mensaje
             shareUrl = `https://wa.me/?text=${text} ${url}`;
-        } else if (channel === 'linkedin') {
-            // LinkedIn usa 'url' y 'title' (que será el texto)
-            shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`;
+        } else if (channel === 'gmail') {
+            // Gmail usa 'su' para el asunto y 'body' para el cuerpo del mensaje
+            shareUrl = `https://mail.google.com/mail/u/0/?hl=es#inbox?view=cm&fs=1&to=&su=${text}&body=${url}`;
         } else if (channel === 'x') {
             // X (Twitter) usa 'text' y 'url'
             shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
@@ -570,6 +598,42 @@ function setupSocialSharing(level) {
     });
 }
 
+/**
+ * Calcula la puntuación máxima teórica del quiz sumando el maxScore de todas las preguntas.
+ * @returns {number} La puntuación máxima.
+ */
+function calculateMaxTheoreticalScore() {
+    // Usamos reduce() para iterar sobre el array questions y sumar la propiedad maxScore
+    const maxScore = questions.reduce((sum, question) => sum + (question.maxScore || 0), 0);
+    return maxScore;
+}
+
+// ... (resto de funciones)
+
+function calculateAndDisplayResults() {
+    let rawScore = 0;
+    
+    // Suma las respuestas (SIN CAMBIOS)
+    for (const questionId in answers) {
+        rawScore += answers[questionId]; 
+    }
+
+    // AHORA CALCULAMOS EL MAX SCORE DINÁMICAMENTE
+    const MAX_THEORETICAL_SCORE = calculateMaxTheoreticalScore(); // <-- CAMBIO CLAVE
+    
+    // Si no hay preguntas o el max score es cero, evitamos la división por cero
+    if (MAX_THEORETICAL_SCORE === 0) {
+        console.error("Error: Puntuación máxima teórica es cero.");
+        let percentageScore = 0;
+    } else {
+        let percentageScore = Math.min(100, Math.round((rawScore / MAX_THEORETICAL_SCORE) * 100)); // <-- CÓDIGO ORIGINAL
+        totalScore = percentageScore; 
+    }
+
+    // ... (resto de la función, que ahora usa el totalScore calculado dinámicamente)
+
+}
+
 function calculateAndDisplayResults() {
     // ESTA FUNCIÓN ASUME QUE YA TIENES LAS RESPUESTAS EN LA VARIABLE GLOBAL 'answers'
     let rawScore = 0;
@@ -581,7 +645,7 @@ function calculateAndDisplayResults() {
 
     // El puntaje máximo teórico para tus 5 preguntas de prueba (1, 2, 3, 4, 25) es 1+5+55+2+2 = 65
     // Usa el máximo teórico de TODAS tus 25 preguntas si ya las tienes definidas.
-    const MAX_THEORETICAL_SCORE = 65; 
+    const MAX_THEORETICAL_SCORE = 125; 
     
     let percentageScore = Math.min(100, Math.round((rawScore / MAX_THEORETICAL_SCORE) * 100));
     totalScore = percentageScore; 
@@ -629,6 +693,7 @@ function handleResultsSubmission(event) {
     // 1. Recoger datos de los inputs del formulario
     const name = fullNameInput.value.trim();
     const email = emailInput.value.trim();
+    const phone = phoneInput.value.trim(); // Si tienes un campo de teléfono, recógelo aquí
     // const ideaName = ideaNameDisplayInput.value; // CAMBIO: Mostrar el nombre en el input deshabilitado
     
     // Validar Email (función que ya tienes definida)
@@ -647,6 +712,7 @@ function handleResultsSubmission(event) {
         name: name,
         email: email,
         ideaName: ideaName,
+        phone: phone,
         answers: answers 
     };
 
