@@ -16,9 +16,6 @@
         
         <div id="quiz-intro" style="display: none;"> <h1 class="neon-magenta">Antes de empezar… cuéntame tu idea 💡</h1>
             
-                <!-- <label for="ideaName" class="neon-cyan">
-                    ¿Cómo se llama tu idea, proyecto o startup?
-                </label> -->
                 <p class="small-text">¿Cómo se llama tu idea, proyecto o startup? (No tiene que ser perfecto. Incluso si le pones un nombre provisional, sirve.)</p>
 
                 <input type="text" id="ideaName" placeholder="👉 Nombre de la idea / proyecto / startup" class="text-input" required>
@@ -56,17 +53,12 @@
 
         <div id="results-form-content" class="fade-in" style="display: none;">
 
-            <!-- <h2 class="neon-magenta form-title">¡Misión Cumplida!</h2> -->
             <h2 class="neon-magenta form-title"> 
                     <span class="part1">¡Misión</span>
                     <span class="part2">Cumplida!</span>
             </h2>
             
             <h3 class="form-subtitle">Guarda el diagnóstico de tu startup.</h3>
-
-            <!-- <p class="small-text form-info">
-                Tu nivel de madurez está listo. Déjanos tus datos para enviarte el plan de acción, tu puntaje y los pasos críticos para convertir tu idea en un producto real.
-            </p> PROPUESTA CAMBIO-->
 
             <p class="small-text ">
                 Tu nivel de madurez está listo. Déjanos tus datos para enviarte el plan de acción, tu puntaje y los pasos para convertir tu idea en un producto real.
@@ -81,10 +73,37 @@
                 <input type="email" id="email" placeholder="📧 Correo electrónico" class="text-input" required>
 
                 <label for="phone" class="neon-cyan">Teléfono</label>
-                <input type="tel" id="phone" placeholder="📞 Número de teléfono" class="text-input" required>
-
-                <!-- <label for="ideaNameDisplay" class="neon-cyan">Tu Idea/Proyecto</label>
-                <input type="text" id="ideaNameDisplay" class="text-input" disabled> -->
+                <div class="phone-input-group">
+                    <select id="countryCode" class="text-input-select" required> 
+                        <option value="+1">🇺🇸 +1 (EEUU/Canadá)</option>
+                        <option value="+34" selected>🇪🇸 +34 (España)</option>
+                        <option value="+52">🇲🇽 +52 (México)</option>
+                        <option value="+57">🇨🇴 +57 (Colombia)</option>
+                        <option value="+54">🇦🇷 +54 (Argentina)</option>
+                        <option value="+51">🇵🇪 +51 (Perú)</option>
+                        <option value="+56">🇨🇱 +56 (Chile)</option>
+                        <option value="+593">🇪🇨 +593 (Ecuador)</option>
+                        <option value="+58">🇻🇪 +58 (Venezuela)</option>
+                        <option value="+502">🇬🇹 +502 (Guatemala)</option>
+                        <option value="+504">🇭🇳 +504 (Honduras)</option>
+                        <option value="+503">🇸🇻 +503 (El Salvador)</option>
+                        <option value="+505">🇳🇮 +505 (Nicaragua)</option>
+                        <option value="+507">🇵🇦 +507 (Panamá)</option>
+                        <option value="+598">🇺🇾 +598 (Uruguay)</option>
+                        <option value="+595">🇵🇾 +595 (Paraguay)</option>
+                        <option value="+591">🇧🇴 +591 (Bolivia)</option>
+                        <option value="+55">🇧🇷 +55 (Brasil)</option>
+                        <option value="+44">🇬🇧 +44 (Reino Unido)</option>
+                        <option value="+33">🇫🇷 +33 (Francia)</option>
+                        <option value="+49">🇩🇪 +49 (Alemania)</option>
+                        <option value="+39">🇮🇹 +39 (Italia)</option>
+                        <option value="+7">🇷🇺 +7 (Rusia)</option>
+                        <option value="+86">🇨🇳 +86 (China)</option>
+                        <option value="+91">🇮🇳 +91 (India)</option>
+                    </select>
+                    
+                    <input type="tel" id="phone" placeholder="Número de teléfono" class="text-input phone-number-field" required>
+                </div>
             
                 <button type="submit" id="submitResultsBtn" class="final-btn">
                     RECIBIR DIAGNÓSTICO (GRATIS)
@@ -96,9 +115,9 @@
             </form>
         </div>
 
-            <div id="results-content" style="display: none;" class="fade-in">
+            <div id="results-content" style="display: none;" class="fade-in"> 
 
-                <h2 class="neon-magenta results-title">Diagnóstico de Madurez de tu Idea</h2>
+                <h2 class="neon-magenta results-title">Diagnóstico de Madurez</h2>
 
                 <div class="score-display-block">
                     <p class="score-label neon-cyan">Tu Nivel de Madurez es:</p>
@@ -106,11 +125,22 @@
                     <div id="scoreValue" class="score-value">--/100</div> 
                 </div>
 
-                <div class="recommendations-block">
-                    <h3 class="neon-cyan">✅ ¿Y ahora qué haces? Te explicamos los siguientes pasos:</h3>
-                    <ul id="recommendationsList" class="recommendations-list"> 
-                        </ul>
+                <div class="score-display-block">
+                    <div class="recommendations-block">
+                        <h3 class="neon-cyan">✅ ¿Y ahora qué haces? Te explicamos los siguientes pasos:</h3>
+                        <ul id="recommendationsList" class="recommendations-list"> 
+                            </ul>
+                    </div>
                 </div>
+
+                <div class="score-display-block">
+                    <div id="resultsBreakdown">
+                        
+                    </div>
+                </div>
+
+                <p class="small-text neon-cyan" style="text-align: center;">Reserva tu primera mentoría gratis AHORA. 
+                    Habla con un experto y descubre cómo llevar tu proyecto al siguiente nivel con un método validado.</p>
             
                 <div class="cta-section">
                     <button id="mainCtaBtn" class="final-cta-btn">
@@ -138,5 +168,18 @@
     </div> 
     
     <script src="quiz.js"></script>
+    <script>
+        const starfield = document.getElementById('starfield');
+        const starCount = 200;
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starfield.appendChild(star);
+        }
+    </script>
 </body>
 </html>
