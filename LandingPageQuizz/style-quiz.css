@@ -53,6 +53,14 @@
     font-size: 1rem;
 }
 
+.small-text-final {
+    color: #ffffff;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 2px;
+    padding: 10px 0px 10px;
+    font-size: 1rem;
+}
+
 .questions-quizz {
     color: #ffffff;
     font-family: 'Space Mono', monospace;
