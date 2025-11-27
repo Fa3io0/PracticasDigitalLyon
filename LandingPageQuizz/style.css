@@ -120,11 +120,67 @@ body::after {
     margin: 10px 10px;
 }
 
+/* Estilos para el header-logo-container */
+.header-logo-container {
+    width: 100%;
+    max-width: none;
+    margin: 0; 
+    padding: 10px 32px; 
+    box-sizing: border-box; 
+    position: relative; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; 
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-header-image {
+    width: 225px; 
+    height: auto;
+    margin-right: 15px; 
+    flex-shrink: 0; 
+    cursor: pointer;
+    
+}
+
+.header-title {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 60px 0 40px;
+    width: auto;
+    position: relative;
+    left: 10%;
+    line-height: 1.6;
+}
+
+.header-title::before,
+.header-title::after {
+    content: '█';
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+}
+
+.header-title::before {
+    left: -30px;
+}
+
+.header-title::after {
+    right: -30px;
+}
+
+
 /* Hero Section */
 .hero {
-    padding: 100px 0;
     position: relative;
-    margin: 20px;
 }
 
 /* NUEVO: Estructura de dos columnas para el Hero */
@@ -132,13 +188,12 @@ body::after {
     display: flex; 
     gap: 40px; 
     align-items: flex-start; 
-    padding-top: 10px;
 }
 
 /* Columna Izquierda: Título y CTA */
 .hero-content {
     flex: 3; 
-    max-width: 60%; 
+    max-width: 100%; 
     text-align: left;
 }
 
@@ -298,9 +353,9 @@ h1 .part2 {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.7rem;
     text-decoration: none;
-    color: #ffffff;
-    background: #5c1558;
-    border: 1px solid #000000;
+    color: #000;
+    background: #d6cece;
+    border: 2px solid #000000;
     cursor: pointer;
     transition: all 0.1s;
     position: relative;
@@ -309,7 +364,7 @@ h1 .part2 {
 
 .secondary-btn-app:hover {
     background: var(--neon-cyan, #5c24b8);
-    color: #0d0221;
+    color: #fff;
     box-shadow: 0 0 20px var(--neon-cyan, #5c24b8);
     transform: translate(-2px, -2px); 
 }
@@ -437,9 +492,9 @@ h1 .part2 {
 }
 
 .btn:hover {
-    background: var(--neon-cyan, #5c1558);
+    background: var(--neon-cyan, #ff00ff);
     color: #0d0221;
-    box-shadow: 0 0 20px var(--neon-cyan, #5c1558);
+    box-shadow: 0 0 20px var(--neon-cyan, #ff00ff);
     transform: translate(-2px, -2px);
 }
 
@@ -822,5 +877,25 @@ footer p {
         position: static;
         transform: none;
         margin-top: 20px;
+    }
+
+    .header-logo-container {
+        padding: 15px 20px;
+    }
+    
+    .nav-container {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .logo-header-image {
+        width: 50px; 
+        margin-right: 0;
+        margin-bottom: 5px; 
+    }
+
+    .header-title {
+        font-size: 1.2rem; 
+        white-space: normal;
     }
 }

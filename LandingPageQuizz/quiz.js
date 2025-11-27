@@ -73,6 +73,51 @@ const resultsForm = document.getElementById('resultsForm'); // El formulario en 
 const ideaNameDisplayInput = document.getElementById('ideaNameDisplay'); // Input deshabilitado
 const fullNameInput = document.getElementById('fullName'); // Input de nombre
 const emailInput = document.getElementById('email'); // Input de email
+// Audio clips (relative paths -> files should exist in the same folder as quiz.html)
+const selectSound = new Audio('jump_c_02-102843.mp3'); // Audio de seleccionar pregunta
+const nextSound = new Audio('90s-game-ui-6-185099.mp3'); // Audio de continuar
+
+// Improve loading and behavior: preload, sensible default volume and debug listeners
+selectSound.preload = 'auto';
+selectSound.volume = 0.8;
+selectSound.addEventListener('canplaythrough', () => console.debug('selectSound loaded'));
+selectSound.addEventListener('error', (e) => console.error('selectSound load error', e));
+
+nextSound.preload = 'auto';
+nextSound.volume = 0.8;
+nextSound.addEventListener('canplaythrough', () => console.debug('nextSound loaded'));
+nextSound.addEventListener('error', (e) => console.error('nextSound load error', e));
+
+// Many browsers require a user gesture to unlock audio playback.
+// We'll attempt to "unlock" the audio on the first user interaction (click or keydown)
+let _audioUnlocked = false;
+function unlockAudioOnFirstUserGesture() {
+    if (_audioUnlocked) return;
+    try {
+        // play muted for a split second then pause -> this unlocks the audio in most browsers.
+        [selectSound, nextSound].forEach(s => {
+            s.muted = true;
+            s.play().then(() => {
+                s.pause();
+                s.currentTime = 0;
+                s.muted = false; // unmute for real playback later
+            }).catch(err => {
+                console.debug('Audio unlock attempt failed for', s.src, err);
+            });
+        });
+    } catch (err) {
+        console.debug('unlockAudioOnFirstUserGesture error', err);
+    }
+    _audioUnlocked = true;
+    document.removeEventListener('click', unlockAudioOnFirstUserGesture);
+    document.removeEventListener('keydown', unlockAudioOnFirstUserGesture);
+}
+
+// Attach once so first interaction unlocks audio
+document.addEventListener('click', unlockAudioOnFirstUserGesture, { once: true });
+document.addEventListener('keydown', unlockAudioOnFirstUserGesture, { once: true });
+// For mobile/touch devices
+document.addEventListener('touchstart', unlockAudioOnFirstUserGesture, { once: true });
 
 // 4. FUNCIONES DE LÓGICA
 
@@ -125,6 +170,8 @@ function startQuiz() {
     if (ideaName) {
         // 1. Guardar el nombre del proyecto
         localStorage.setItem(IDEA_NAME_KEY, ideaName);
+
+        playSound(selectSound);
         
         // 2. Transicionar la pantalla
         introSection.style.display = 'none';
@@ -144,6 +191,28 @@ function saveProgress() {
         answers: answers
     };
     localStorage.setItem(QUIZ_STATE_KEY, JSON.stringify(state));
+}
+
+/**
+ * Detiene y reproduce un clip de audio.
+ * @param {Audio} soundClip - El objeto Audio a reproducir.
+ */
+function playSound(soundClip) {
+    if (soundClip) {
+        // Reinicia el sonido al principio si ya está sonando
+        try {
+            soundClip.currentTime = 0;
+        } catch (e) {
+            // Some browsers throw if the clip isn't ready yet
+            console.debug('Warning resetting currentTime for', soundClip && soundClip.src, e);
+        }
+
+        soundClip.play().catch(e => {
+            // More detailed debug info to help diagnose problems
+            console.warn("Error al reproducir audio:", soundClip && soundClip.src, e);
+        });
+        // .catch() evita errores en navegadores que bloquean el autoplay
+    }
 }
 
 /**
@@ -212,7 +281,10 @@ function handleAnswerSelection(event) {
     answers[questionId] = value;
     saveProgress();
 
-    // 3. Habilitar el botón Siguiente
+    // 3. Reproducir el sondio de selección
+    playSound(selectSound);
+
+    // 4. Habilitar el botón Siguiente
     nextBtn.disabled = false;
     updateProgressBar();
 }
@@ -272,10 +344,14 @@ function goToNextQuestion() {
         currentQuestionIndex++;
         renderQuestion(currentQuestionIndex);
         saveProgress();
+
+        playSound(nextSound);
+
     } else if (currentQuestionIndex === totalQuestions - 1) {
         // Lógica de finalización: MOSTRAR FORMULARIO DE RESULTADOS
         console.log("¡ÚLTIMA PREGUNTA! Intentando mostrar el formulario...");
         
+        playSound(nextSound);
         // Ocultar el quiz y mostrar el formulario
         quizContainer.style.display = 'none';
         resultsFormContent.style.display = 'block';
