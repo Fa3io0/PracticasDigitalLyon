@@ -14,8 +14,8 @@
 
     <div class="header-logo-container">
         <nav class="nav-container">
-            <a href="StartQuizz.html">
-                <img src="Logos Fase 1.png" alt="Logo de Fase 1" class="logo-header-image" style="margin-top: 10px;">
+            <a href="index.html">
+                <img src="./icons/logos_Fase_Uno_Definitivo.png" alt="Logo de Fase 1" class="logo-header-image" style="margin-top: 10px;">
             </a>
         </nav>
     </div>
@@ -24,7 +24,7 @@
         
         <div id="quiz-intro" style="display: none;"> <h1 class="neon-magenta">Antes de empezar… 💡</h1>
             
-                <p class="small-text">¿Cómo se llama tu idea, proyecto o startup? (No tiene que ser perfecto. Incluso si le pones un nombre provisional, sirve.)</p>
+                <p class="small-text">¿Cómo se llama tu idea o startup? (Si aun no tienes uno, coloca un nombre provisional)</p>
 
                 <input type="text" id="ideaName" placeholder="👉 Nombre de tu idea / proyecto / startup" class="text-input" required>
 
@@ -32,14 +32,13 @@
                     <h2 class="neon-magenta">🎮 ¿Qué viene ahora?</h2>
                     <p>Estás a punto de entrar al Quiz Interactivo de madurez y validación, diseñado para emprendedores que quieren saber si su idea puede sobrevivir… o necesita un power-up.</p>
                     <ul>
-                        <li>Responder pocas preguntas, rápidas y directas</li>
-                        <li>Recibir una evaluación honesta (sin rodeos)</li>
-                        <li>Obtener acciones concretas para avanzar tu idea</li>
-                        <li>Saber si estás listo para construir, mejorar… o replantear</li>
+                        <li> → Responder pocas preguntas, rápidas y directas</li>
+                        <li> → Recibir una evaluación honesta (sin rodeos)</li>
+                        <li> → Obtener acciones concretas para avanzar tu idea</li>
                     </ul>
                 </div>
 
-                <button id="startQuizBtn" class="btn" disabled style="margin-left: 450px; margin-top: 30px;">
+                <button id="startQuizBtn" class="btn" disabled style="margin-left: 800px; margin-top: 10px;">
                     CONTINUAR ▶
                 </button>
             </div>
@@ -80,9 +79,9 @@
                 <label for="email" class="neon-cyan">Email</label>
                 <input type="email" id="email" placeholder="📧 Correo electrónico" class="text-input" required>
 
-                <label for="phone" class="neon-cyan">Teléfono</label>
+                <label for="phone" class="neon-cyan">WhatsApp <span style="font-size:0.85rem; color:#bfbfbf;">(opcional)</span></label>
                 <div class="phone-input-group">
-                    <select id="countryCode" class="text-input-select" required> 
+                    <select id="countryCode" class="text-input-select"> 
                         <option value="+1">🇺🇸 +1 (EEUU/Canadá)</option>
                         <option value="+34" selected>🇪🇸 +34 (España)</option>
                         <option value="+52">🇲🇽 +52 (México)</option>
@@ -110,7 +109,7 @@
                         <option value="+91">🇮🇳 +91 (India)</option>
                     </select>
                     
-                    <input type="tel" id="phone" placeholder="Número de teléfono" class="text-input phone-number-field" required>
+                    <input type="tel" id="phone" placeholder="Número de teléfono (opcional)" class="text-input phone-number-field">
                 </div>
             
                 <button type="submit" id="submitResultsBtn" class="final-btn">
@@ -137,7 +136,7 @@
                     <div class="recommendations-block">
                         <h3 class="neon-cyan">✅ ¿Ahora qué hago?</h3>
                         <p class="small-text-final">A continuación te damos algunas recomendaciones iniciales: </p>
-                        <ul id="recommendationsList" class="recommendations-list"> 
+                        <ul id="recommendationsList" class="recommendations-list" style="font-family:'Space Mono', monospace;"> 
                             </ul>
                     </div>
                 </div>
@@ -155,7 +154,7 @@
                     <button id="mainCtaBtn" class="final-cta-btn">
                         [CTA Dinámico]
                     </button>
-                    <p class="cta-info" id="ctaInfo">
+                    <p class="cta-info" id="ctaInfo" style="font-family:'Space Mono', monospace;">
                         Te explicamos los siguientes pasos según tu etapa.
                     </p>
                 </div>
@@ -175,10 +174,12 @@
             </div>
         </div>
     </div> 
+
+    <div id="footer-anchor"></div>
     
     <script src="quiz.js"></script>
     <script>
-        const starfield = document.getElementById('starfield');
+        const starfield = document  .getElementById('starfield');
         const starCount = 200;
         
         for (let i = 0; i < starCount; i++) {

@@ -1,16 +1,17 @@
-// 1. DATA: Preguntas del Quiz (25 preguntas - ESTRUCTURA MODIFICADA)
+// 1. DATA: Preguntas del Quiz (30 preguntas)
+    
 const questions = [
     // Bloque 1: Estrategia & Objetivos (Preguntas 1-5)
     { id: 1, question: "¿Tu propuesta de valor cabe en una frase clara?", type: 'yesno', maxScore: 5, block: "Estrategia & Objetivos", options: [{ text: "Sí", value: 5 }, { text: "No", value: 1 }] },
-    { id: 2, question: "¿Tu cliente ideal está claramente definido?", type: 'scale', maxScore: 5, block: "Estrategia & Objetivos", options: [{ text: "1 - Nada, claro aún", value: 1 }, { text: "2 - Tengo una noción muy general", value: 2 }, { text: "3 - Lo tengo parcialmente, pero sin precisión", value: 3 }, { text: "4 - Bastante claro, aunque con dudas", value: 4 }, { text: "5 - Totalmente, definido y específico", value: 5 }] },
+    { id: 2, question: "¿Tu cliente ideal está claramente definido?", type: 'scale', maxScore: 5, block: "Estrategia & Objetivos", options: [{ text: "Nada, claro aún", value: 1 }, { text: "Tengo una noción muy general", value: 2 }, { text: "Lo tengo parcialmente, pero sin precisión", value: 3 }, { text: "Bastante claro, aunque con dudas", value: 4 }, { text: "Totalmente, definido y específico", value: 5 }] },
     { id: 3, question: "¿Cuál es tu principal meta a 6 meses?", type: 'multiple', maxScore: 5, block: "Estrategia & Objetivos", options: [{ text: "Validar", value: 1 }, { text: "Lanzar", value: 2 }, { text: "Crecer", value: 3 }, { text: "Monetizar", value: 4 }, { text: "Escalar", value: 5 }] },
     { id: 4, question: "¿Conoces a tus 3 competidores directos?", type: 'yesno', maxScore: 5, block: "Estrategia & Objetivos", options: [{ text: "Sí", value: 5 }, { text: "No", value: 1 }] },
-    { id: 5, question: "¿Tienes métricas claras para medir éxito?", type: 'scale', maxScore: 5, block: "Estrategia & Objetivos", options: [{ text: "1 - No tengo ninguna métrica definida", value: 1 }, { text: "2 - Tengo idea de métricas sueltas, pero aún no las sigo", value: 2 }, { text: "3 — Tengo algunas métricas básicas", value: 3 }, { text: "4 — Tengo métricas definidas y las reviso a veces", value: 4 }, { text: "5 — Sí, métricas claras, definidas y monitoreadas", value: 5 },] },
+    { id: 5, question: "¿Tienes métricas claras para medir éxito?", type: 'scale', maxScore: 5, block: "Estrategia & Objetivos", options: [{ text: "No tengo ninguna métrica definida", value: 1 }, { text: "Tengo idea de métricas sueltas, pero aún no las sigo", value: 2 }, { text: "Tengo algunas métricas básicas", value: 3 }, { text: "Tengo métricas definidas y las reviso a veces", value: 4 }, { text: "Sí, métricas claras, definidas y monitoreadas", value: 5 },] },
     // //Bloque 2: Modelo de Negocio (Preguntas 6-10)
-    { id: 6, question: "¿Sabes exactamente cómo monetizarás tu producto?", type: 'scale', maxScore: 5, block: "Modelo de Negocio", options: [{ text: "1 — No tengo ninguna idea aún", value: 1 }, { text: "2 — Tengo algunas opciones, pero ninguna claro", value: 2 }, { text: "3 —Tengo una idea general, sin validar", value: 3 }, { text: "4 — Tengo un modelo definido, pero con dudas", value: 4 }, { text: "5 — Sí, totalmente claro y definido", value: 5 }] },
-    { id: 7, question: "¿Has validado que los usuarios pagarían por tu solución?", type: 'scale', maxScore: 5, block: "Modelo de Negocio", options: [{ text: "1 - No, es solo un supuesto", value: 1 }, { text: "2 — He recibido interés, pero muy informal", value: 2 }, { text: "3 — Tengo señales claras de interés (mensajes, encuestas, demos)", value: 3 }, , { text: "4 — Tengo compromisos o promesas de pago", value: 4 }, { text: "5 — Sí, ya tengo clientes reales que están pagando", value: 5 }] },
+    { id: 6, question: "¿Sabes exactamente cómo monetizarás tu producto?", type: 'scale', maxScore: 5, block: "Modelo de Negocio", options: [{ text: "No tengo ninguna idea aún", value: 1 }, { text: "Tengo algunas opciones, pero ninguna claro", value: 2 }, { text: "Tengo una idea general, sin validar", value: 3 }, { text: "Tengo un modelo definido, pero con dudas", value: 4 }, { text: "Sí, totalmente claro y definido", value: 5 }] },
+    { id: 7, question: "¿Has validado que los usuarios pagarían por tu solución?", type: 'scale', maxScore: 5, block: "Modelo de Negocio", options: [{ text: "No, es solo un supuesto", value: 1 }, { text: "He recibido interés, pero muy informal", value: 2 }, { text: "Tengo señales claras de interés (mensajes, encuestas, demos)", value: 3 }, , { text: "Tengo compromisos o promesas de pago", value: 4 }, { text: "Sí, ya tengo clientes reales que están pagando", value: 5 }] },
     { id: 8, question: "¿Tienes calculado tu costo de adquisición de cliente (CAC)?", type: 'multiple', maxScore: 5, block: "Modelo de Negocio", options: [{ text: "Sí, lo tengo claro y calculado", value: 5 }, { text: "Tengo una estimación aproximada", value: 3 }, { text: "No, todavía no lo tengo definido", value: 1 }] },
-    { id: 9, question: "¿Conoces tu margen de beneficio por cliente?", type: 'scale', maxScore: 5, block: "Modelo de Negocio", options: [{ text: "1 - No tengo idea aún", value: 1 }, { text: "2 - Tengo números sueltos, pero sin calcular margen", value: 2 }, { text: "3 — Tengo una estimación aproximada", value: 3 }, { text: "4 — Lo tengo casi definido, con algunos ajustes pendientes", value: 4 }, { text: "5 — Sí, totalmente claro y calculado", value: 5 }] },
+    { id: 9, question: "¿Conoces tu margen de beneficio por cliente?", type: 'scale', maxScore: 5, block: "Modelo de Negocio", options: [{ text: "No tengo idea aún", value: 1 }, { text: "Tengo números sueltos, pero sin calcular margen", value: 2 }, { text: "Tengo una estimación aproximada", value: 3 }, { text: "Lo tengo casi definido, con algunos ajustes pendientes", value: 4 }, { text: "Sí, totalmente claro y calculado", value: 5 }] },
     { id: 10, question: "¿Tu modelo de ingresos es recurrente o único?", type: 'multiple', maxScore: 5, block: "Modelo de Negocio", options: [{ text: "Recurrente (suscripción, membresía, ingresos periódicos)", value: 5 }, { text: "Mixto (mezcla de pagos recurrentes y puntuales)", value: 4 }, { text: "Único (pago puntual por producto o servicio)", value: 3 }, { text: "No definido / todavía no tengo claro", value: 1 }] },
     // //// Bloque 3: Producto & Desarrollo (Preguntas 11-15)
     { id: 11, question: "¿Tienes un MVP funcional y probado por usuarios?", type: 'scale', maxScore: 5, block: "Producto & Desarrollo", options: [{ text: "Sí, tengo algo más que un MVP. Una plataforma funcionando.", value: 5 }, { text: "Sí, un MVP funcionando y validado por usuarios reales", value: 4 }, { text: "Sí, un MVP probado por amigos, familiares o personas cercanas", value: 3 }, { text: "Un MVP en desarrollo / aún no validado con usuarios", value: 2 }, { text: "Solo idea / todavía no existe MVP", value: 1 }] },
@@ -43,7 +44,6 @@ const questions = [
     { id: 29, question: "¿Cuánto tiempo semanal dedicas a tu idea/startup?", type: 'multiple', maxScore: 5, block: "Capacidad & Ejecución", options: [{ text: "Tiempo completo", value: 5 }, { text: "Tiempo parcial", value: 4 }, { text: "Menos de 10 horas", value: 3 }, { text: "Menos de 2 horas", value: 2 }, { text: "Nada", value: 1 }] },
     { id: 30, question: "¿Tienes claridad sobre qué habilidades te faltan desarrollar?", type: 'multiple', maxScore: 5, block: "Capacidad & Ejecución", options: [{ text: "Sí, muy claro", value: 5 }, { text: "Algo claro", value: 3 }, { text: "No", value: 1 }] }
 ];
-    
 
 // 2. ESTADO DEL QUIZ Y KEYS
 const QUIZ_STATE_KEY = 'quizProgress';
@@ -74,10 +74,32 @@ const ideaNameDisplayInput = document.getElementById('ideaNameDisplay'); // Inpu
 const fullNameInput = document.getElementById('fullName'); // Input de nombre
 const emailInput = document.getElementById('email'); // Input de email
 // Audio clips (relative paths -> files should exist in the same folder as quiz.html)
-const selectSound = new Audio('jump_c_02-102843.mp3'); // Audio de seleccionar pregunta
-const nextSound = new Audio('90s-game-ui-6-185099.mp3'); // Audio de continuar
+const selectSound = new Audio('./sounds/jump_c_02-102843.mp3'); // Audio de seleccionar pregunta
+const nextSound = new Audio('./sounds/90s-game-ui-6-185099.mp3'); // Audio de continuar
+// Victory sound for finishing the quiz
+const victorySound = new Audio('./sounds/11l-victory_sound_with_t-1749487409696-357609.mp3');
 
-// Improve loading and behavior: preload, sensible default volume and debug listeners
+// Variable para almacenar el HTML del footer
+const footerHTML = `
+    <footer>
+        <div class="footer-content-wrapper">
+            <div class="footer-left">
+                <p>© 2025 — Fase Uno Startup Studio</p>
+            </div>
+            
+            <div class="footer-right">
+                <a href="/condiciones">Condiciones</a>
+                <span>  |  </span>
+                <a href="/privacidad">Privacidad</a>
+                <span>  |  </span>
+                <a href="/cookies">Cookies</a>
+                <span>  |  </span>
+                <a href="/contactame">Contacto</a>
+            </div>
+        </div>
+    </footer>
+`;
+
 selectSound.preload = 'auto';
 selectSound.volume = 0.8;
 selectSound.addEventListener('canplaythrough', () => console.debug('selectSound loaded'));
@@ -88,19 +110,21 @@ nextSound.volume = 0.8;
 nextSound.addEventListener('canplaythrough', () => console.debug('nextSound loaded'));
 nextSound.addEventListener('error', (e) => console.error('nextSound load error', e));
 
-// Many browsers require a user gesture to unlock audio playback.
-// We'll attempt to "unlock" the audio on the first user interaction (click or keydown)
+victorySound.preload = 'auto';
+victorySound.volume = 0.9;
+victorySound.addEventListener('canplaythrough', () => console.debug('victorySound loaded'));
+victorySound.addEventListener('error', (e) => console.error('victorySound load error', e));
+
 let _audioUnlocked = false;
 function unlockAudioOnFirstUserGesture() {
     if (_audioUnlocked) return;
     try {
-        // play muted for a split second then pause -> this unlocks the audio in most browsers.
-        [selectSound, nextSound].forEach(s => {
+        [selectSound, nextSound, victorySound].forEach(s => {
             s.muted = true;
             s.play().then(() => {
                 s.pause();
                 s.currentTime = 0;
-                s.muted = false; // unmute for real playback later
+                    s.muted = (typeof isMuted !== 'undefined' && isMuted) ? true : false; // respect user's chosen mute preference
             }).catch(err => {
                 console.debug('Audio unlock attempt failed for', s.src, err);
             });
@@ -113,11 +137,37 @@ function unlockAudioOnFirstUserGesture() {
     document.removeEventListener('keydown', unlockAudioOnFirstUserGesture);
 }
 
-// Attach once so first interaction unlocks audio
 document.addEventListener('click', unlockAudioOnFirstUserGesture, { once: true });
 document.addEventListener('keydown', unlockAudioOnFirstUserGesture, { once: true });
-// For mobile/touch devices
 document.addEventListener('touchstart', unlockAudioOnFirstUserGesture, { once: true });
+
+// --- BOTON DE MUTE --------------
+let isMuted = (localStorage.getItem('quizMuted') === 'true');
+
+function updateMuteUI() {
+    const _btn = document.getElementById('muteBtn');
+    if (_btn) {
+        _btn.setAttribute('aria-pressed', isMuted ? 'true' : 'false');
+        _btn.textContent = isMuted ? '🔈' : '🔊';
+        _btn.title = isMuted ? 'Activar sonidos' : 'Silenciar sonidos';
+    }
+    try {
+        selectSound.muted = isMuted;
+        nextSound.muted = isMuted;
+        if (victorySound) victorySound.muted = isMuted;
+    } catch (e) {
+        console.debug('Error applying mute state to sounds', e);
+    }
+}
+
+function toggleMute() {
+    isMuted = !isMuted;
+    localStorage.setItem('quizMuted', isMuted ? 'true' : 'false');
+    updateMuteUI();
+}
+
+updateMuteUI();
+
 
 // 4. FUNCIONES DE LÓGICA
 
@@ -126,7 +176,7 @@ document.addEventListener('touchstart', unlockAudioOnFirstUserGesture, { once: t
  */
 function loadProgress() {
     const savedState = localStorage.getItem(QUIZ_STATE_KEY);
-    const ideaName = localStorage.getItem(IDEA_NAME_KEY); // CAMBIO: Cargar el nombre de la idea
+    const ideaName = localStorage.getItem(IDEA_NAME_KEY); // 
 
     if (savedState && ideaName) {
         // Si hay progreso y nombre guardados, continuar con el quiz
@@ -149,6 +199,14 @@ function loadProgress() {
         // Habilitar/deshabilitar botón si el campo de nombre se llena
         ideaNameInput.addEventListener('input', () => {
             startQuizBtn.disabled = ideaNameInput.value.trim() === '';
+        });
+
+        // Listener de 'keydown' para el Enter (Justo lo que querías)
+        ideaNameInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' && !startQuizBtn.disabled) {
+                event.preventDefault(); // Previene el envío por defecto si está en un form
+                startQuiz();
+            }
         });
 
         // Cargar nombre si existe (para el caso de reanudar el input)
@@ -198,6 +256,11 @@ function saveProgress() {
  * @param {Audio} soundClip - El objeto Audio a reproducir.
  */
 function playSound(soundClip) {
+    // Respect mute setting
+    if (typeof isMuted !== 'undefined' && isMuted) {
+        console.debug('playSound skipped (muted):', soundClip && soundClip.src);
+        return; 
+    }
     if (soundClip) {
         // Reinicia el sonido al principio si ya está sonando
         try {
@@ -233,28 +296,45 @@ function renderQuestion(index) {
             const isSelected = option.value === currentAnswer ? ' selected' : '';
             optionsHtml += `
                 <div class="answer-option${isSelected}" data-value="${option.value}" data-question-id="${questionData.id}">
-                    <span class="neon-cyan" style="line-height: 2;">${option.text}</span>
+                    <span class="questions-quizz" style="line-height: 1.2;">${option.text}</span>
                 </div>
             `;
         });
 
         // 2. Insertar el contenido de la pregunta y opciones
-        quizContent.innerHTML = `
-            <h2 class="neon-magenta">Pregunta ${index + 1}/${totalQuestions}:</h2>
-            <h3 class="questions-quizz">${questionData.question}</h3>
-            <div id="options-container">
-                ${optionsHtml}
-            </div>
-        `;
+        quizContent.innerHTML = `
+            <div class="question-header">
+                <h2 class="neon-magenta">Pregunta ${index + 1}/${totalQuestions}:</h2>
+                <div class="mute-container">
+                    <button id="muteBtn" class="btn btn-mute" aria-pressed="${isMuted ? 'true' : 'false'}">${isMuted ? '🔕' : '🔊'}</button>
+                </div>
+            </div>
+            <h3 class="questions-quizz">${questionData.question}</h3>
+            <div id="options-container">
+                ${optionsHtml}
+            </div>
+        `;
 
         // 3. Añadir Listeners para seleccionar la respuesta
         document.querySelectorAll('.answer-option').forEach(optionElement => {
             optionElement.addEventListener('click', handleAnswerSelection);
         });
 
-        // 4. Actualizar barra de progreso y botones
+        // 4. Añadir listener al botón de mute (ya generado dentro del HTML anterior) y actualizar UI
+        const renderedMuteBtn = document.getElementById('muteBtn');
+        if (renderedMuteBtn) {
+            // remove old listeners just in case (safe guard)
+            try { renderedMuteBtn.replaceWith(renderedMuteBtn.cloneNode(true)); } catch(e) { /* ignore */ }
+            const freshMuteBtn = document.getElementById('muteBtn');
+            if (freshMuteBtn) freshMuteBtn.addEventListener('click', toggleMute);
+        }
+
+        // 5. Actualizar barra de progreso y botones
         updateProgressBar();
         updateNavigationButtons();
+
+        // Ensure UI reflects current mute state (in case button was newly created)
+        updateMuteUI();
 
         quizContent.classList.add('fade-in');
 
@@ -297,7 +377,6 @@ function updateProgressBar() {
     const progress = (answeredCount / totalQuestions) * 100;
     
     progressBarFill.style.width = `${progress}%`;
-    progressBarText.textContent = `PROGRESO: ${answeredCount}/${totalQuestions} RESPUESTAS`;
 }
 
 // Actualiza la visibilidad y estado de los botones de navegación.
@@ -314,7 +393,7 @@ function updateNavigationButtons() {
     
     // Texto del botón Siguiente
     if (currentQuestionIndex === totalQuestions - 1) {
-        nextBtn.textContent = 'FINALIZAR QUIZ 🏆';
+        nextBtn.textContent = 'FINALIZAR QUIZ';
         nextBtn.style.background = '#ff00ff';
         nextBtn.style.borderColor = '#ff00ff';
         nextBtn.style.boxShadow = '0 0 10px #ff00ff';
@@ -351,11 +430,14 @@ function goToNextQuestion() {
         // Lógica de finalización: MOSTRAR FORMULARIO DE RESULTADOS
         console.log("¡ÚLTIMA PREGUNTA! Intentando mostrar el formulario...");
         
-        playSound(nextSound);
+        // Play victory sound when finishing the quiz (only for the finalizar button)
+        playSound(victorySound);
         // Ocultar el quiz y mostrar el formulario
         quizContainer.style.display = 'none';
         resultsFormContent.style.display = 'block';
         nextBtn.disabled = true; 
+
+        document.getElementById('footer-anchor').innerHTML = footerHTML;
     }
 }
 
@@ -376,11 +458,11 @@ let totalScore = 0;
 
 // Definición de Rangos y Recomendaciones (AJUSTA LOS VALORES DEL QUIZ)
 const MATURITY_RANGES = [
-    { max: 20, level: "IDEA CONFUSA 😵‍💫", recommendations: ["Enfócate en definir mejor tu Propuesta de Valor única (PVU).", "Identifica tu nicho de cliente exacto, no de forma genérica, lo más detallado posible.", "No construyas nada aún, ¡solo habla con usuarios! Enfócate en preguntar y escuchar atentamente."], ctaText: "Agenda tu mentoría gratuita", ctaUrl: "mentoria-booking-link.html" },
-    { max: 40, level: "EN VALIDACIÓN 🔬", recommendations: ["Crea una Landing Page de prueba rápida. No necesitas una web sólo una interfase accionable.", "Contacta a potenciales clientes o lanza anuncios de bajo presupuesto para medir interés.", "Realiza entrevistas centradas en el problema (no en el producto o la solución)."], ctaText: "Agenda tu mentoría gratuita", ctaUrl: "mentoria-booking-link.html" },
-    { max: 60, level: "MVP LISTO 🏗️", recommendations: ["Crea y lanza una versión mínima (MVP) del producto para comenzar a interactuar con un grupo reducido de usuarios.", "Establece métricas de uso y conversión (ej: Tasa de Retención). Analiza resultados honestamente y ajusta.", "Necesitas saber si es un negocio viable. Calcula el Costo de Adquisición de Clientes (CAC)."], ctaText: "Agenda tu mentoría gratuita", ctaUrl: "mentoria-booking-link.html" },
-    { max: 80, level: "STARTUP EN TRACCIÓN 📈", recommendations: ["Optimiza tu proceso de ventas/conversión. Enfócate en validar un embudo de ventas y luego automatizarlo.", "Busca canales de adquisición escalables y rentables. Debes testear variantes hasta que encuentres la que funcione para tí.", "Documenta procesos operativos para duplicar el crecimiento."], ctaText: "Agenda tu mentoría gratuita", ctaUrl: "mentoria-booking-link.html" },
-    { max: 100, level: "STARTUP CRECIENDO 🔥", recommendations: ["Explora nuevos mercados. alianzas o segmentos de cliente.", "Invierte en automatización y desarrollo de equipos. Es momento de elegir bien tus palancas de negocio.", "Prepara tu empresa para una ronda de inversión. Optimiza tu pitch, crea campañas orientadas a comunicar el valor entregado, y alineadas a lo que un potencial inversor esperaría ver."], ctaText: "Agenda tu mentoría gratuita", ctaUrl: "mentoria-booking-link.html" },
+    { max: 20, level: "IDEA CONFUSA 😵‍💫", recommendations: ["Enfócate en definir mejor tu Propuesta de Valor única (PVU).", "Identifica tu nicho de cliente exacto, no de forma genérica, lo más detallado posible.", "No construyas nada aún, ¡solo habla con usuarios! Enfócate en preguntar y escuchar atentamente."], ctaText: "Agenda tu mentoría gratuita", ctaUrl: "https://faseuno.pro/agendar/" },
+    { max: 40, level: "EN VALIDACIÓN 🔬", recommendations: ["Crea una Landing Page de prueba rápida. No necesitas una web sólo una interfase accionable.", "Contacta a potenciales clientes o lanza anuncios de bajo presupuesto para medir interés.", "Realiza entrevistas centradas en el problema (no en el producto o la solución)."], ctaText: "Agenda tu mentoría gratuita", ctaUrl: "https://faseuno.pro/agendar/" },
+    { max: 60, level: "MVP LISTO 🏗️", recommendations: ["Crea y lanza una versión mínima (MVP) del producto para comenzar a interactuar con un grupo reducido de usuarios.", "Establece métricas de uso y conversión (ej: Tasa de Retención). Analiza resultados honestamente y ajusta.", "Necesitas saber si es un negocio viable. Calcula el Costo de Adquisición de Clientes (CAC)."], ctaText: "Agenda tu mentoría gratuita", ctaUrl: "https://faseuno.pro/agendar/" },
+    { max: 80, level: "STARTUP EN TRACCIÓN 📈", recommendations: ["Optimiza tu proceso de ventas/conversión. Enfócate en validar un embudo de ventas y luego automatizarlo.", "Busca canales de adquisición escalables y rentables. Debes testear variantes hasta que encuentres la que funcione para tí.", "Documenta procesos operativos para duplicar el crecimiento."], ctaText: "Agenda tu mentoría gratuita", ctaUrl: "https://faseuno.pro/agendar/" },
+    { max: 100, level: "STARTUP CRECIENDO 🔥", recommendations: ["Explora nuevos mercados. alianzas o segmentos de cliente.", "Invierte en automatización y desarrollo de equipos. Es momento de elegir bien tus palancas de negocio.", "Prepara tu empresa para una ronda de inversión. Optimiza tu pitch, crea campañas orientadas a comunicar el valor entregado, y alineadas a lo que un potencial inversor esperaría ver."], ctaText: "Agenda tu mentoría gratuita", ctaUrl: "https://faseuno.pro/agendar/" },
 ];
 
 /**
@@ -515,9 +597,7 @@ function calculateAndDisplayResults() {
         rawScore += answers[questionId]; 
     }
 
-    // El puntaje máximo teórico para tus 5 preguntas de prueba (1, 2, 3, 4, 25) es 1+5+55+2+2 = 65
-    // Usa el máximo teórico de TODAS tus 25 preguntas si ya las tienes definidas.
-    const MAX_THEORETICAL_SCORE = 125; 
+    const MAX_THEORETICAL_SCORE = 150; 
     
     let percentageScore = Math.min(100, Math.round((rawScore / MAX_THEORETICAL_SCORE) * 100));
     totalScore = percentageScore; 
@@ -536,7 +616,7 @@ function calculateAndDisplayResults() {
         const percentage = blockBreakdown[blockName].percentage;
         breakdownHtml += `
             <div class="block-result">
-                <p>${blockName}: <strong>${percentage}%</strong></p>
+                <p style="font-family:'Space Mono', monospace;">${blockName}: <strong>${percentage}%</strong></p>
                 <div class="progress-bar-area"><div style="width: ${percentage}%;"></div></div>
             </div>
         `;
@@ -585,10 +665,13 @@ function handleResultsSubmission(event) {
 
     const name = fullNameInput.value.trim();
     const email = emailInput.value.trim();
-    const countryCode = countryCodeElement.value.trim();
-    const phoneNumber = phoneNumberElement.value.trim();
-
-    const phoneFull = countryCode + phoneNumber;
+    // Phone is optional. Build phoneFull only when a number is provided.
+    const countryCode = countryCodeElement ? countryCodeElement.value.trim() : '';
+    const phoneNumber = phoneNumberElement ? phoneNumberElement.value.trim() : '';
+    let phoneFull = '';
+    if (phoneNumber) {
+        phoneFull = countryCode ? (countryCode + phoneNumber) : phoneNumber;
+    }
     
     // Validar Email (función que ya tienes definida)
     if (!validateEmail(email)) {
@@ -652,3 +735,4 @@ function validateEmail(email) {
 
 // 4. LISTENERS DEL FORMULARIO
 resultsForm.addEventListener('submit', handleResultsSubmission);
+

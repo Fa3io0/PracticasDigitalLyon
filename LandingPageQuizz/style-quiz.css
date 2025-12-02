@@ -1,12 +1,15 @@
 .quiz-container {
     max-width: 1100px;
-    margin: 20px auto;
-    padding: 40px;
+    width: 95%;
+    min-height: 380px;
+    margin: 2vh auto;
+    padding: 28px 20px;
     background: linear-gradient(135deg, #1a0b3d 0%, #0d0221 100%);
     border: 6px solid #ff00ff; /* Borde magenta para destacar */
     box-shadow: 0 0 15px #ff00ff;
-    min-height: 500px;
     border-radius: 8px;
+    display: none;
+    text-align: left;
 }
 
     /* Barra de Progreso - Estilo Arcade */
@@ -38,11 +41,60 @@
     text-shadow: 2px 2px #000;
 }
 
+/*  Mute Boton */
+.btn-mute {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.12s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.btn-mute[aria-pressed="true"] {
+    background: rgba(255,0,255,0.14);
+    border-color: rgba(255,0,255,0.28);
+    box-shadow: 0 0 12px rgba(255,0,255,0.12);
+}
+
+/* Header layout for question + mute control */
+.question-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+.question-header h2 {
+    margin: 0;
+    font-size: 1rem; 
+}
+
+.mute-container {
+    display: flex;
+    align-items: center;
+}
+.btn-mute:hover {
+    transform: translate(-2px, -2px);
+}
+
 /* Contenedor de la Pregunta */
+
+#quiz-content {
+    text-align: left;
+}
+
 #quiz-content h2 {
     font-size: 1.5rem;
     color: #b18deb;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#quiz-content h3 {
+    text-align: left !important;
 }
 
 .small-text {
@@ -61,12 +113,43 @@
     font-size: 1rem;
 }
 
+
+/* Opciones de Respuesta (Opción Múltiple/Escala) */
+
+.answer-option {
+    background: #1a0b3d;
+    border: 2px solid #5c24b8;
+    padding: 15px 22px;
+    min-height: 36px;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+    color: #fff;
+    transition: all 0.1s;
+    text-align: center !important;
+}
+
+.answer-option:hover {
+    border-color: #ff00ff;
+    background: #2a1b4d;
+}
+
+.answer-option.selected {
+    background: #5c24b8;
+    border-color: #b18deb;
+    box-shadow: 0 0 10px #b18deb;
+    font-weight: bold;
+}
+
 .questions-quizz {
     color: #ffffff;
     font-family: 'Space Mono', monospace;
-    letter-spacing: 2px;
-    display: block !important;
+    text-align: center !important;
 }
+
+.answer-option span {
+    text-align: center !important;
+    line-height: normal;
+} 
 
 /* Estilo para el placeholder */
 
@@ -184,9 +267,8 @@
     font-size: 1em;
 }
 
-/* Ícono/Bullet de lista personalizado (Punto Neón) */
+/* Ícono/Bullet de lista personalizado */
 .info-block ul li::before {
-    content: '→'; 
     position: absolute;
     left: 0;
     top: 0;
@@ -197,35 +279,37 @@
     font-size: 1.2em;
 } 
 
-/* Opciones de Respuesta (Opción Múltiple/Escala) */
-.answer-option {
-    background: #1a0b3d;
-    border: 2px solid #5c24b8;
-    padding: 15px;
-    margin-bottom: 15px;
-    cursor: pointer;
-    font-family: 'Press Start 2P', cursive;
-    color: #fff;
-    transition: all 0.1s;
-}
-
-.answer-option:hover {
-    border-color: #ff00ff;
-    background: #2a1b4d;
-}
-
-.answer-option.selected {
-    background: #5c24b8;
-    border-color: #b18deb;
-    box-shadow: 0 0 10px #b18deb;
-    font-weight: bold;
-}
-
 /* Botones de Navegación */
 .quiz-navigation {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments for the quiz UX */
+@media (max-width: 1024px) {
+    .quiz-container { padding: 26px; }
+    .progress-bar-text { font-size: 0.68rem; }
+}
+
+@media (max-width: 768px) {
+    .quiz-container { padding: 20px; width: 98%; }
+    .answer-option { font-size: 0.9rem; padding: 10px; }
+    .quiz-navigation { gap: 12px; flex-direction: column-reverse; }
+    .quiz-navigation .btn, .quiz-navigation .btn-secondary { width: 100%; }
+    #quiz-content h3 { font-size: 1rem; }
+    .progress-bar-text { font-size: 0.62rem; }
+    /* center the start button that had inline margin on desktop */
+    #quiz-intro #startQuizBtn { margin-left: auto !important; margin-right: auto !important; display: block; }
+}
+
+@media (max-width: 480px) {
+    .quiz-container { padding: 14px; border-width: 4px; min-height: 320px; }
+    .answer-option { padding: 8px; font-size: 0.88rem; }
+    .progress-bar-container { height: 28px; }
+    .progress-bar-text { font-size: 0.6rem; white-space: normal; line-height: 1.1; }
+    .question-header h2 { font-size: 0.9rem; }
+    .btn { padding: 12px 14px; font-size: 0.75rem; }
 }
 
 .quiz-navigation .btn, .quiz-navigation .btn-secondary {
@@ -234,6 +318,7 @@
 }
 
 .btn-secondary {
+    font-family: 'Press Start 2P', cursive;
     background: #808080; 
     border-color: #555;
 }
@@ -375,6 +460,7 @@
 
 .level-text {
     font-size: 1.8rem;
+    font-family: 'Space Mono', monospace;
     color: #fff;
     margin-bottom: 15px;
     text-shadow: 0 0 5px #fff;
